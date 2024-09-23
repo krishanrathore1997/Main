@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+body {
+  overflow: scroll;
+}
+
+.main {
+  position: relative;
+}
+
+.main-title {
+  position: absolute;
+  top: -10px;
+  z-index: 1;
+  left: 5px;
+  background-color: white;
+  color: #0073BD;
+  padding: 0 5px;
+  width: max-content;
+}
+.main-title-cool {
+  position: absolute;
+  top: -10px;
+  z-index: 1;
+  left: 5px;
+  background-color: white;
+  color: #964B00;
+  padding: 0 5px;
+  width: max-content;
+}
+
+.main-border {
+  border: 2px solid #0073BD !important;
+  /* border-radius: 8px; */
+}
+.padding-top{
+  padding-top: 1.5rem;
+}
+.bottom-margin{
+  margin-bottom: 11px;
+}
+.bold-label {
+  font-weight: bold;
+}
+
+.secondary-border {
+  border: 1px solid #0073BD !important;
+  border-radius: 5px;
+}
+.prog-para-border {
+  border: 1px solid  #964B00 !important;
+  border-radius: 5px;
+}
+
+.text-blue {
+  color: #86b7fe !important;
+}
+
+section {
+  padding: 10px 0px;
+}
+
+.pressure-btn {
+  background-color: #60B2F5;
+  color: white;
+  border-radius: 0px !important;
+}
+
+.pressure-btn:hover {
+  background-color: #86b7fe;
+  color: white;
+
+}
+.padding-top-field{
+  padding-top: 4px;
+}
+.padding-field{
+  padding-top: 2px;
+}
+
+.scroll-container {
+  overflow: hidden;
+}
+
+
+.btn-group button {
+  padding: 10px 20px !important;
+}
+
+.form-control, select:focus {
+  border-color: inherit !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.form-control, select {
+  border: 1px solid rgb(79, 77, 77) !important;
+  border-radius: 0px !important;
+
+}
+.program-control{
+  padding: 0.150rem 0.75rem !important; 
+}
+
+.form-control {
+
+  line-height: 0 !important;
+  padding: 0.150rem 0.75rem !important;
+
+  
+}
+/* input{
+width: -webkit-fill-available !important;
+} */
+.bg-blue {
+  background-color: #0073bd !important;
+}
+
+input[type='checkbox'] {
+  border-radius: 0px !important;
+}
+
+.arm-logo {
+  object-fit: contain !important;
+}
+
+.arm-logo img {
+  max-width: 100%;
+}
+
+.width-web {
+  width: -webkit-fill-available !important;
+}
+
+.bg-gray {
+  background: #80808029 !important;
+}
+
+.bg-red {
+  background: #ffdbdb !important;
+
+}
+
+.width-100 {
+  width: 100px !important;
+}
+.width-30 {
+  width: 30px !important;
+}
+
+.width-50 {
+  width: 50px !important;
+}
+.width-70 {
+  width: 70px !important;
+}
+
+.width-per-40 {
+  width: 40% !important;
+}
+
+.width-per-30 {
+  width: 30% !important;
+}
+
+.width-per-60 {
+  width: 60% !important;
+}
+
+.width-per-70 {
+  width: 70% !important;
+}
+
+.width-80 {
+  width: 80px !important;
+}
+.width-60 {
+  width: 60px !important;
+}
+
+.width-max {
+  width: max-content !important;
+}
+.sheet-thickness{
+  border: 2px solid black;
+}
+.circle-container {
+  position: relative;
+  width: 80px; 
+  height: 80px; 
+  margin: 10px;
+}
+
+.outer-circle {
+  width: 90%;
+  height: 75%;
+  border-radius: 50%;
+  background-color: #000000;
+  position: absolute;
+  top: 50%;
+  /* left: -5px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  transform: translate(50%, -30%);
+}
+
+.btn-center{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.inner-circle {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  z-index: 1;
+  border: 2px solid black;
+}
+
+.quarter {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 0;
+  border: 1px solid black;
+}
+
+.quarter-1 {
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 100%
+}
+
+.quarter-2 {
+  background-color: #ffffff;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 100%
+}
+
+.quarter-3 {
+  background-color: #ffffff;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 100%
+}
+
+.quarter-4 {
+  background-color: #ffffff;
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 100%
+}
+
+.handle {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background-color: #000000;
+  top: -20px; /* Adjust the position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.handle-horizontal {
+  position: absolute;
+  width: 4px;
+  height: 25px;
+  background-color: #000000;
+  top: -35px; /* Adjust the position as needed */
+  left: 48%;
+  transform: rotate(90deg);
+  z-index: 2;
+
+}
+
+@media (max-width: 1300px) {
+  input, select {
+      width: 50%;
+  }
+  .outer-circle{
+      width: 70%;
+      margin-right: 40px;
+  }
+}

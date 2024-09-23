@@ -1,0 +1,3160 @@
+<html>
+
+<head>
+    <title>Log Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Configuration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontawesome-6-pro@6.4.0/css/all.min.css">
+    <style>
+        td {
+            white-space: nowrap;
+        }
+
+        thead th {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #f2f2f2;
+        }
+
+        .menu,
+        .menu ul {
+            display: flex;
+            flex-direction: row;
+            margin: 4px;
+            list-style: none;
+            width: 100%;
+            background: #0073bd;
+            max-width: 100%;
+        }
+
+        .menu ul li,
+        .menu ul li a {
+            width: 100%;
+            text-align: center;
+            font-size: 11pt;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+
+        fieldset {
+            border: 1px solid darkblue;
+            color: darkblue;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .program-section {
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+        }
+
+        .form-select {
+            --bs-form-select-bg-img: none !important;
+        }
+
+        .form-check-label {
+            font-size: 14px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="menu">
+            <ul>
+                <li><a href="dashboard.html">Timer</a></li>
+                <li><a href="diagnosis.html" id="header_link_diag">Diagnosis</a></li>
+                <li><a href="user.html" id="header_link_user"> User Administration</a></li>
+                <li><a href="settings.html" id="header_link_setting"> Settings</a></li>
+                <li><a href="info.html"> Help</a></li>
+            </ul>
+        </div>
+    </div>
+    <section>
+        <div class="container-fluid">
+            <div class="row g-3">
+                <div class="col-lg-9">
+                    <div class="p-4 main border main-border">
+                        <label for="first" class="main-title fs-5">Program Selection</label>
+                        <div class="row program-section g-3">
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label bold-label">Program No</label>
+                                <div class="">
+                                    <select name="program_no" class="form-select" aria-label="Default select example">
+                                        <option value="1" selected>1
+                                        </option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label bold-label">Program Name</label>
+                                <div class="">
+                                    <input type="text" class="form-control bg-gray" name="program_name"
+                                        placeholder="11 AUG TRIAL">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label bold-label">Gun No</label>
+                                <div class="">
+                                    <input type="number" class="form-control" name="gun_no" placeholder="0">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+
+                                <label class="form-label bold-label">Schedule</label>
+                                <div class="">
+                                    <select name="schedule" class="form-select bg-gray"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>Single
+                                        </option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label bold-label">Monitoring</label>
+                                <div class="">
+                                    <select name="monitoring" class="form-select bg-gray"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>1Standard
+                                        </option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label bold-label">Re-weld Factor</label>
+                                <div class="">
+                                    <select name="re_weld_factor" class="form-select bg-gray        "
+                                        aria-label="Default select example">
+                                        <option value="1" selected>0
+                                        </option>
+                                        <option value="2">1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="weld" type="checkbox" value="" id="weld">
+                                    <label class="form-check-label fw-bold" for="weld">
+                                        Weld
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="reweld" type="checkbox" value="" id="reweld">
+                                    <label class="form-check-label fw-bold" for="reweld">
+                                        Re-weld Schedule
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="time_monitoring" type="checkbox" value=""
+                                        id="time_monitoring">
+                                    <label class="form-check-label fw-bold" for="time_monitoring">
+                                        Time monitoring
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label bold-label">Base Selection value <br> (Proportional
+                                    value)</label>
+                                <div class="">
+                                    <select name="program_no" class="form-select" aria-label="Default select example">
+                                        <option value="1" selected>0
+                                        </option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label bold-label">Impulse</label>
+                                <div class="">
+                                    <select name="impulse" class="form-select bg-gray"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>1
+                                        </option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <label class="form-label bold-label">Mode of selection of Current</label>
+                                <div class="">
+                                    <select name="mode_current" class="form-select bg-gray"
+                                        aria-label="Default select example">
+                                        <option value="1" selected>KSR
+                                        </option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-lg-3">
+                                <label class="form-label bold-label">Program No</label>
+                                <div class="">
+                                    <select name="program_no" class="form-select" aria-label="Default select example">
+                                        <option value="1" selected>1
+                                        </option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                                <div class="my-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="weld" type="checkbox" value="" id="weld">
+                                        <label class="form-check-label" for="weld">
+                                            Weld
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <label class="form-label bold-label">Schedule</label>
+                                    <div class="">
+                                        <select name="schedule" class="form-select bg-gray"
+                                            aria-label="Default select example">
+                                            <option value="1" selected>Single
+                                            </option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="my-3 pt-4">
+                                    <label class="form-label bold-label">Monitoring</label>
+                                    <div class="">
+                                        <select name="monitoring" class="form-select bg-gray"
+                                            aria-label="Default select example">
+                                            <option value="1" selected>1Standard
+                                            </option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="form-label bold-label">Program Name</label>
+                                <div class="">
+                                    <input type="text" class="form-control bg-gray" name="program_name"
+                                        placeholder="11 AUG TRIAL">
+                                </div>
+                                <div class="my-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="reweld" type="checkbox" value=""
+                                            id="reweld">
+                                        <label class="form-check-label" for="reweld">
+                                            Re-weld Schedule
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <label class="form-label bold-label">Re-weld Factor</label>
+                                    <div class="">
+                                        <select name="re_weld_factor" class="form-select bg-gray        "
+                                            aria-label="Default select example">
+                                            <option value="1" selected>0
+                                            </option>
+                                            <option value="2">1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <label class="form-label bold-label">Base Selection value <br> (Proportional
+                                        value)</label>
+                                    <div class="">
+                                        <select name="program_no" class="form-select"
+                                            aria-label="Default select example">
+                                            <option value="1" selected>0
+                                            </option>
+                                            <option value="2">2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-3">
+                                <label class="form-label bold-label">Gun No</label>
+                                <div class="">
+                                    <input type="number" class="form-control" name="gun_no" placeholder="0">
+                                </div>
+                                <div class="my-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="time_monitoring" type="checkbox" value=""
+                                            id="time_monitoring">
+                                        <label class="form-check-label" for="time_monitoring">
+                                            Time monitoring
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <label class="form-label bold-label">Impulse</label>
+                                    <div class="">
+                                        <select name="impulse" class="form-select bg-gray"
+                                            aria-label="Default select example">
+                                            <option value="1" selected>1
+                                            </option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <label class="form-label bold-label">Mode of selection of Current</label>
+                                    <div class="">
+                                        <select name="mode_current" class="form-select bg-gray"
+                                            aria-label="Default select example">
+                                            <option value="1" selected>KSR
+                                            </option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 main border main-border" style="height: 100%;">
+                        <!-- <label for="first" class="main-title fs-5">Program Selection</label> -->
+                        <button type="button" class="btn btn-primary btn-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Reference Parameters
+                          </button>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="main main-border p-3">
+                        <label for="first" class="main-title fs-6 bold-label"><P></P>rogram Parameters</label>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="row g-3">
+                                    <div class="col-4 p-2 pb-0 pre_squeeze">
+                                        <div class="mb-3 pt-3 px-2 main secondary-border">
+                                            <label class="form-label main-title fs-6 bold-label">Pre squeeze</label>
+                                            <div class="d-flex  align-items-center mb-2">
+                                                <label for="pre_squeeze_t"
+                                                    class="width-per-30 fs-7 bold-label">T(cly):</label>
+                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
+                                                    name="pre_squeeze" min="0" max="99" id="pre_squeeze_t">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 pt-3 px-2 main secondary-border">
+                                            <label for="" class="form-label main-title fs-6 bold-label">Squeeze</label>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <label for="squeeze_t"
+                                                    class="width-per-30 fs-7 bold-label">T(cly):</label>
+                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
+                                                    name="squeeze" min="0" max="99" id="squeeze_t">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pb-0 up_slope">
+                                        <div class="mb-3 px-2 pt-3 main secondary-border">
+                                            <label for="up_slope_t" class="form-label main-title fs-6 bold-label">Up
+                                                slope</label>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <label for="" class="width-per-30 fs-7 bold-label">T(cly):</label>
+                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
+                                                    name="up_slope" min="0" max="99" id="up_slope_t">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 px-2 pt-3 main secondary-border">
+                                            <label for="first" class="form-label main-title fs-6 bold-label">Blanking
+                                                Cycle</label>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <label for="blanking_cycle_t"
+                                                    class="width-per-30 fs-7 bold-label">T(cly):</label>
+                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
+                                                    name="blanking_cycle" min="0" max="99" id="blanking_cycle_t">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pb-0">
+                                        <div class="mb-3 px-2 pt-3 main secondary-border weld1 weld1_custom">
+                                            <label for="first"
+                                                class="form-label main-title-cool bold-label fs-6">Weld-1</label>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <label for="weld_t" class="width-per-30 fs-7 bold-label">T(cly):</label>
+                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
+                                                    name="weld_t" min="0" max="99" id="weld_t">
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <label for="weld_ef"
+                                                    class="width-per-30 fs-7 bold-label">EF(kgf):</label>
+                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
+                                                    name="weld_ef" min="0" max="99" id="weld_ef">
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <label for="weld_l" id="weld_1_heat_label"
+                                                    class="width-per-30 fs-7 bold-label">l(KA):</label>
+                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
+                                                    name="weld_ka" min="0" max="99" id="weld_l">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="row g-3">
+                                    <div class="col-3">
+                                        <div class="mb-2 px-2 pt-3 main prog-para-border weld2">
+                                            <label for="first"
+                                                class="form-label main-title-cool bold-label fs-6">Cool-1</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="cool_l_t"
+                                                    class="width-per-30 fs-7 medium-label">T(cly):</label>
+                                                <input class="ms-2 form-control width-per-70 medium-label \" min="0"
+                                                    name="cool-1" type="text" max="99" id="cool_l_t" disabled="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="mb-2 px-2 pt-3 main prog-para-border">
+                                            <label for="first"
+                                                class="form-label main-title-cool bold-label fs-6">Weld-2</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_2_t"
+                                                    class="width-per-30 fs-7 medium-label">T(cly):</label>
+                                                <input class="ms-2 form-control width-per-70 weld2 medium-label"
+                                                    name="weld-2_t" type="text" id="weld_2_t">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_2_ef"
+                                                    class="width-per-30 medium-label fs-7">EF(kgf):</label>
+                                                <input class="ms-2 form-control width-per-70 weld2 medium-label"
+                                                    name="weld-2_ef" type="text" id="weld_2_ef"
+                                                    onchange="onWeld2ForceChange(this.value);">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_2_l" id="weld_2_heat_label"
+                                                    class="width-per-30 medium-label fs-7">l(KA):</label>
+                                                <input class="ms-2 form-control width-per-70 weld2 medium-label"
+                                                    name="weld-2_l" type="text" id="weld_2_l">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="mb-2 px-2 pt-3 main prog-para-border weld3">
+                                            <label for="first"
+                                                class="form-label main-title-cool bold-label fs-6">Cool-2</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="cool_2_t"
+                                                    class="width-per-30 fs-7 medium-label">T(cly):</label>
+                                                <input class="ms-2 form-control width-per-70 weld3 medium-label"
+                                                    name="cool_2_t" type="text" id="cool_2_t" disabled="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="mb-2 px-2 pt-3 main prog-para-border weld3">
+                                            <label for="first"
+                                                class="form-label main-title-cool bold-label fs-6">Weld-3</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_3_t"
+                                                    class="width-per-30 medium-label fs-7">T(cly):</label>
+                                                <input class="ms-2 form-control width-per-70 weld3 medium-label"
+                                                    name="weld_3_t" type="text" id="weld_3_t" disabled="">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_3_ef"
+                                                    class="width-per-30 fs-7 medium-label">EF(kgf):</label>
+                                                <input class="ms-2 form-control width-per-70 weld3 medium-label"
+                                                    name="weld_3_ef" type="text" id="weld_3_ef" disabled="">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_3_l" id="weld_3_heat_label"
+                                                    class="width-per-30 medium-label fs-7">Heat(%):</label>
+                                                <input class="ms-2 form-control width-per-70 weld3 medium-label"
+                                                    name="weld_3_l" type="text" id="weld_3_l" disabled="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="row g-3">
+                                    <div class="col-6 down-slope">
+                                        <div class="mb-3 px-2 pt-3 main secondary-border">
+                                            <label for="first" class="form-label main-title fs-6 bold-label">Down
+                                                slope</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="down_slope_t"
+                                                    class="width-per-30 fs-7 bold-label">T(cly):</label>
+                                                <input type="text" class="ms-2 form-control width-per-60 bold-label"
+                                                    name="down_slope" id="down_slope_t">
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 px-2 pt-3 main secondary-border">
+                                            <label for="first"
+                                                class="form-label main-title fs-6 bold-label">Hold</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="down_slope_hold_t"
+                                                    class="width-per-30 fs-7 bold-label">T(cly):</label>
+                                                <input type="text" class="ms-2 form-control width-per-60 bold-label"
+                                                    name="down_slope_hold_t" id="down_slope_hold_t">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="mb-2 px-2 pt-3 main secondary-border off-time">
+                                            <label for="first" class="form-label main-title fs-6 bold-label">Off
+                                                time</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="off_time_t" class="width-per-40 bold-label">T(cly):</label>
+                                                <input type="text" class="ms-2 form-control width-per-60 bold-label"
+                                                    name="off_time_t" id="off_time_t">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="row g-3 justify-content-center">
+                            <div class="col-lg-10 main secondary-border py-1">  
+                                <label for="first" class="main-title fs-6 bold-label">Feedback</label>
+                                 <div class="row pt-4 px-3">
+                                    <div class="col-lg col-md-4 main secondary-border py-2">
+                                        <label for="first" class="form-label main-title fs-6 bold-label">Weld-1</label>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="actual_current" class="bold-label">Actual current:</label>
+                                            <input type="text" class="bg-red ms-2 " name="actual_current"
+                                                id="actual_current"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="actual_weld_time" class="bold-label">Actual weld
+                                                time:</label>
+                                            <input type="text" class="bg-red ms-2 " name="actual_weld_time"
+                                                id="actual_weld_time"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="power_factor" class="bold-label">Primary Current:</label>
+                                            <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                id="power_factor" style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="power_factor" class="bold-label">Heat %:</label>
+                                            <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                id="heat_percentage"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg col-md-4 main secondary-border py-2 mx-lg-2">
+                                        <label for="first" class="form-label main-title fs-6 bold-label">Weld-2</label>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="w2_actual_current" class="bold-label">Actual
+                                                current:</label>
+                                            <input type="text" class="bg-red ms-2 " name="actual_current"
+                                                id="w2_actual_current"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="w2_actual_weld_time" class="bold-label">Actual weld
+                                                time:</label>
+                                            <input type="text" class="bg-red ms-2 " name="actual_weld_time"
+                                                id="w2_actual_weld_time"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="w2_power_factor" class="bold-label">Primary Current:</label>
+                                            <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                id="w2_power_factor"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="power_factor" class="bold-label">Heat %:</label>
+                                            <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                id="w2_heat_percentage"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg col-md-4 main secondary-border py-2">
+                                        <label for="first" class="form-label main-title fs-6 bold-label">Weld-3</label>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="w3_actual_current" class="bold-label">Actual
+                                                current:</label>
+                                            <input type="text" class="bg-red ms-2 " name="actual_current"
+                                                id="w3_actual_current"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="w3_actual_weld_time" class="bold-label">Actual weld
+                                                time:</label>
+                                            <input type="text" class="bg-red ms-2 " name="actual_weld_time"
+                                                id="w3_actual_weld_time"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="w3_power_factor" class="bold-label">Primary Current:</label>
+                                            <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                id="w3_power_factor"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                            <label for="power_factor" class="bold-label">Heat %:</label>
+                                            <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                id="w3_heat_percentage"
+                                                style="font-weight:600;text-align:center;width:100px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="bottom-margin main  secondary-border">
+                                    <label for="first" class="main-title fs-6 bold-label">Timer Details</label>
+                                    <div class="mx-lg-5 text-center">
+                                        <div class="circle-container">
+                                            <div class="outer-circle">
+                                                <div id="section_4" class="inner-circle"
+                                                    style="background-color: white;"></div>
+                                                <div id="section_1" class="quarter quarter-1"
+                                                    style="background-color: grey;"></div>
+                                                <div id="section_5" class="quarter quarter-2"
+                                                    style="background-color: white;"></div>
+                                                <div id="section_2" class="quarter quarter-3"
+                                                    style="background-color: white;"></div>
+                                                <div id="section_3" class="quarter quarter-4"
+                                                    style="background-color: grey;"></div>
+                                                <div class="line horizontal-line"></div>
+                                                <div class="handle"></div>
+                                                <div class="handle-horizontal"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <span id="time_name">Test3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-2 mb-3 main  secondary-border">
+                                    <label for="spot_count" class="main-title fs-6 bold-label">Spot Count</label>
+                                    <div class="d-flex">
+                                        <input type="text" name="spots_Count" id="spot_count" class="bg-red"
+                                            style="font-weight:600; width:-webkit-fill-available;text-align:center;">
+                                    </div>
+                                </div>
+                                <div class="p-2 main  secondary-border">
+                                    <label for="job_count" class="main-title fs-6 bold-label">Job Count</label>
+                                    <div class="d-flex">
+                                        <input type="text" name="job_Count" id="job_count" class="bg-red"
+                                            style="font-weight:600; width:-webkit-fill-available;text-align:center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-1 main secondary-border py-2">
+                                    <label for="first" class="main-title fs-6 bold-label">Program Actions</label>
+                                    <div class="row mx-2 mt-5">
+                                        <button type="button" id="saveProgram"
+                                            class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
+                                            style="background-color: lightgreen;">Save
+                                            Program
+                                        </button>
+                                    </div>
+                                    <div class="row m-2 mt-3">
+                                        <button type="button" id="sendProgram"
+                                            class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
+                                            style="background-color: lightgreen;">Send
+                                            Program
+                                        </button>
+                                    </div>
+                                </div> -->
+                        </div>
+
+
+                        <div class="row align-items-center g-3 mt-2 justify-content-around">
+                            <div class="col-2 main secondary-border py-2">
+                                <label for="global_program_no" class="main-title fs-6 bold-label">Update
+                                    Timestamp</label>
+                                <div class="d-flex">
+                                    <input type="text" name="global_count" id="update_timestamp" class="bg-red " style="font-size:13px; width:-webkit-fill-available;text-align:center;height: 25px;
+                                         font-weight:600;">
+                                </div>
+
+
+                            </div>
+                            <div class="col-2 main secondary-border py-2">
+                                <label for="global_program_no" class="main-title fs-6 bold-label">Program No</label>
+                                <div class="d-flex">
+                                    <input type="text" name="global_count" id="feedback_global_program_no"
+                                        class="bg-red"
+                                        style="font-weight:600;width:-webkit-fill-available;text-align:center;">
+                                </div>
+
+
+                            </div>
+                            <div class="col-1 main secondary-border py-1">
+                                <label for="first" class="main-title mb-3 bold-label">Error</label>
+                                <div class="py-2">
+                                    <input type="text" class="bg-red " name="error" id="error"
+                                        style="width:-webkit-fill-available;font-weight:600;text-align:center;">
+                                </div>
+                            </div>
+                            <div class="col-3 main secondary-border py-1">
+                                <label for="error_desc" class="main-title mb-3 bold-label">Error Description</label>
+                                <div class="py-2">
+                                    <input type="text" class="bg-red" name="error_desc" id="error_desc"
+                                        style="width:-webkit-fill-available;font-weight:600;text-align:center;">
+                                </div>
+                            </div>
+                            <div class="col-3 main secondary-border py-2">
+                                <label for="first" class="main-title fs-6 bold-label">Program Actions</label>
+                                <div class="btn-group-lg mt-2">
+                                    <button type="button" id="saveProgram"
+                                        class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
+                                        style="background-color: lightgreen;">Save
+                                        Program
+                                    </button>
+                                    <button type="button" id="sendProgram"
+                                        class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
+                                        style="background-color: lightgreen;">Send
+                                        Program
+                                    </button>
+                                    <button type="button" id="sendProgram"
+                                        class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
+                                        style="background-color: lightgreen;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                                        More Actions
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="btn-group my-1">
+                            <button type="button" id="btnCreateNewProgram"
+                                class="btn bg-blue fw text-white ms-4 rounded-0 bold-label">
+                                New Program
+                            </button>
+                            <button type="button" class="btn bg-blue fw text-white ms-2 width-max rounded-0 bold-label"
+                                id="btnImportProgram">Import Program
+                            </button>
+                            <input type="file" style="display: none;" id="importInputFile">
+                            <button type="button" class="btn bg-blue fw text-white ms-2 width-max rounded-0 bold-label"
+                                id="btnCopyProgram" onclick="openCopyProgramModel();">Copy Program</button>
+
+
+                            <button type="button" class="btn bg-blue fw text-white ms-2 width-max rounded-0 bold-label"
+                                id="btnBackUp">Back Up</button>
+
+                            <button class="btn bg-blue fw text-white ms-2 width-max rounded-0 bold-label" id="btnGlobal"
+                                type="button" onclick="window.location.href='global.html'">Global Settings
+                            </button>
+                            <button type="button" onclick="window.location.href='sequencePV.html'" id="btnSeqPV"
+                                class="btn bg-blue fw text-white ms-2 px-3 rounded-0 bold-label">Sequence PV
+                            </button>
+                            <button type="button" class="btn bg-danger text-white ms-2 p-0 rounded-0 bold-label"
+                                data-bs-toggle="modal" onclick="viewErrorCodes()">Error List</button>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="p-4 py-1 main main-border">
+                <label for="first" class="main-title fs-6 bold-label">Suggestion window parameter</label>
+                <div class="mb-3 mt-3 py-0 main secondary-border">
+                    <!-- <div class="mb-4"> -->
+                        <div class="main secondary-border">
+
+
+                    <label class="main-title fs-6 bold-label">Selectable parameters</label>
+                    <div class="row p-3">
+                   
+                    <!-- <div class="col-lg-4 py-2"> -->
+                    
+                    <!-- <div class="col-lg-4 py-2"> -->
+                    <div class="col-lg-4 col-md-6">
+
+
+                        <div class="d-flex justify-content-end align-items-center mb-2">
+                            <label for="sheetType" class="bold-label">Sheet type</label>
+                            <div class="ms-2 width-web">
+                                <select name="sheetType" class="form-select bg-gray" aria-label="Default select example" id="sheetType"><option>--select--</option><option value="65832ca98c2be25f010f4e61">GI</option><option value="65832c5f8c2be25f010f4e60">MILD</option><option value="65942bad1bfbe93e13a0f4a8">SS</option><option value="65942bad1bfbe93e13a0f4a9">dsoni</option></select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-4 py-2"> -->
+
+                    <div class="col-lg-4 col-md-6">
+
+
+                        <div class="d-flex justify-content-end align-items-center mb-2">
+                                <label for="thickness" class="bold-label">Sheet thickness</label>
+                                
+                            <div class="ms-2 width-web">
+                                <select name="thickness" id="thickness" class="form-select bg-gray" aria-label="Default select example"><option>--select--</option><option value="6594e521302a46bf1edc4865">1-4.5</option><option value="6594e6fd302a46bf1edc486e">1.2-3.5</option><option value="6594e222302a46bf1edc4850">0.8-1.5</option><option value="6594e737302a46bf1edc4870">1.2-4.5</option><option value="6594de47302a46bf1edc4840">0.5-1.2</option><option value="6594e30f302a46bf1edc4857">0.8-4</option><option value="6594e54d302a46bf1edc4866">1-5</option><option value="6594e647302a46bf1edc4869">1.2-1.8</option><option value="6594df5b302a46bf1edc484c">0.5-5</option><option value="6594ddd8302a46bf1edc483f">0.5-1</option><option value="6594de6b302a46bf1edc4841">0.5-1.5</option><option value="6594df1b302a46bf1edc4849">0.5-3.5</option><option value="6594e418302a46bf1edc485d">1-1.8</option><option value="6594dec6302a46bf1edc4845">0.5-2.2</option><option value="6594e7a9302a46bf1edc4873">1.5-1.5</option><option value="658662e220f79624df066d2e">0.5-0.8</option><option value="6594e1d3302a46bf1edc484e">0.8-1</option><option value="6594e50b302a46bf1edc4864">1-4</option><option value="6594e713302a46bf1edc486f">1.2-4</option><option value="6594e3fe302a46bf1edc485c">1-1.5</option><option value="6594e242302a46bf1edc4851">0.8-1.8</option><option value="6594e265302a46bf1edc4852">0.8-2</option><option value="6594e589302a46bf1edc4867">1.2-1.2</option><option value="6594e660302a46bf1edc486a">1.2-2</option><option value="6594e2d9302a46bf1edc4855">0.8-3</option><option value="6594df29302a46bf1edc484a">0.5-4</option><option value="6594df7e302a46bf1edc484d">0.8-0.8</option><option value="6594e289302a46bf1edc4853">0.8-2.2</option><option value="6594e49b302a46bf1edc4862">1-3</option><option value="6594e77d302a46bf1edc4872">1.2-5</option><option value="6594e3e0302a46bf1edc485b">1-1.2</option><option value="6594e6a6302a46bf1edc486c">1.2-2.5</option><option value="658662e220f79624df066d2d">0.5-0.5</option><option value="6594e46c302a46bf1edc4861">1-2.5</option><option value="6594defe302a46bf1edc4848">0.5-3</option><option value="6594e32b302a46bf1edc4858">0.8-4.5</option><option value="6594e62c302a46bf1edc4868">1.2-1.5</option><option value="6594e208302a46bf1edc484f">0.8-1.2</option><option value="6594de84302a46bf1edc4842">0.5-1.8</option><option value="6594ded8302a46bf1edc4846">0.5-2.5</option><option value="6594df41302a46bf1edc484b">0.5-4.5</option><option value="6594e2f2302a46bf1edc4856">0.8-3.5</option><option value="6594e354302a46bf1edc4859">0.8-5</option><option value="6594e375302a46bf1edc485a">1-1</option><option value="6594e4e7302a46bf1edc4863">1-3.5</option><option value="6594e6d7302a46bf1edc486d">1.2-3</option><option value="6594dea2302a46bf1edc4843">0.5-2</option><option value="6594e453302a46bf1edc4860">1-2.2</option><option value="6594e2a9302a46bf1edc4854">0.8-2.5</option><option value="6594e42f302a46bf1edc485e">1-2</option><option value="6594e68d302a46bf1edc486b">1.2-2.2</option><option value="6594ec4c302a46bf1edc4886">1.8-2.2</option><option value="6594ec2d302a46bf1edc4885">1.8-2</option><option value="6594ea32302a46bf1edc487f">1.5-3</option><option value="6594ec6c302a46bf1edc4887">1.8-2.5</option><option value="6594ed71302a46bf1edc488e">2-2.2</option><option value="6594ef61302a46bf1edc4899">2.2-3</option><option value="6594e9cf302a46bf1edc487c">1.5-2.2</option><option value="6594f2a3302a46bf1edc48a5">3-3</option><option value="6594f3bc302a46bf1edc48ab">3.5-4</option><option value="6594ed9a302a46bf1edc4890">2-2.5</option><option value="6594f19e302a46bf1edc489f">2.5-2.5</option><option value="6594f1ed302a46bf1edc48a0">2.5-3</option><option value="6594ea85302a46bf1edc4882">1.5-4.5</option><option value="6594eed7302a46bf1edc4897">2.2-2.2</option><option value="6594ef99302a46bf1edc489b">2.2-4</option><option value="6594efd1302a46bf1edc489d">2.2-5</option><option value="6594ed22302a46bf1edc488d">2-2</option><option value="6594f2e9302a46bf1edc48a6">3-3.5</option><option value="6594f41f302a46bf1edc48ae">4-4</option><option value="6594edb9302a46bf1edc4891">2-3</option><option value="6594ee8b302a46bf1edc4895">2-4.5</option><option value="6594f20b302a46bf1edc48a1">2.5-3.5</option><option value="6594f24c302a46bf1edc48a3">2.5-4.5</option><option value="6594ee05302a46bf1edc4893">2-4</option><option value="6594efb2302a46bf1edc489c">2.2-4.5</option><option value="6594f274302a46bf1edc48a4">2.5-5</option><option value="6594e973302a46bf1edc487a">1.5-1.8</option><option value="6594e9b1302a46bf1edc487b">1.5-2</option><option value="6594ea16302a46bf1edc487e">1.5-2.5</option><option value="6594f222302a46bf1edc48a2">2.5-4</option><option value="6594f47d302a46bf1edc48b0">4-5</option><option value="6594ea4a302a46bf1edc4880">1.5-3.5</option><option value="6594ecd1302a46bf1edc488a">1.8-4</option><option value="6594f305302a46bf1edc48a7">3-4</option><option value="6594f468302a46bf1edc48af">4-4.5</option><option value="6594eea5302a46bf1edc4896">2-5</option><option value="6594ea63302a46bf1edc4881">1.5-4</option><option value="6594eab6302a46bf1edc4884">1.8-1.8</option><option value="6594ef7f302a46bf1edc489a">2.2-3.5</option><option value="6594f32a302a46bf1edc48a8">3-4.5</option><option value="6594ecb8302a46bf1edc4889">1.8-3.5</option><option value="6594ecfe302a46bf1edc488c">1.8-5</option><option value="6594edea302a46bf1edc4892">2-3.5</option><option value="6594f400302a46bf1edc48ad">3.5-5</option><option value="6594f4f3302a46bf1edc48b3">5-5</option><option value="6594f34e302a46bf1edc48a9">3-5</option><option value="6594eaa0302a46bf1edc4883">1.5-5</option><option value="6594ecea302a46bf1edc488b">1.8-4.5</option><option value="6594ef3d302a46bf1edc4898">2.2-2.5</option><option value="6594f4de302a46bf1edc48b2">4.5-5</option><option value="6594ec98302a46bf1edc4888">1.8-3</option><option value="6594f370302a46bf1edc48aa">3.5-3.5</option><option value="6594f3d8302a46bf1edc48ac">3.5-4.5</option><option value="6594f497302a46bf1edc48b1">4.5-4.5</option></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+
+
+                        <div class="d-flex justify-content-end align-items-center mb-2">
+                            <label for="weldingClass" class="bold-label">Welding class</label>
+                            <div class="ms-2 width-web">
+                                <select name="weldingClass" id="weldingClass" class="form-select bg-gray" aria-label="Default select example">
+                                    <option>A</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    </div>
+
+                    <div class="col-12 px-4">
+                        <div class="mb-2 pt-1 px-2 justify-content-center d-flex main secondary-border">
+                            <label class="main-title fs-6 bold-label">Reference parameters</label>
+                            <div class="p-3">
+                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                    <label for="current" class="bold-label">Current KA:</label>
+                                    <input type="text" class="ms-2 form-control width-70" name="current_ka" id="current">
+                                </div>
+                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                    <label for="weldTime" class="bold-label">Weld time:</label>
+                                    <input type="text" class="ms-2 form-control width-70" name="weldTime" id="weldTime">
+                                </div>
+                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                    <label for="force" class="bold-label">Force kgf:</label>
+                                    <input type="text" class="ms-2 form-control width-70" name="force" id="force">
+                                </div>
+
+                            </div>
+                            <div class="p-3 text-start">
+                             <!-- <div class="d-flex justify-content-end align-items-center mb-2">
+                                    <label for="Nugget" class="bold-label">Weldding nugget mm:</label>
+                                    <input type="text" class="ms-2 form-control width-70" name="Nugget"
+                                           id="Nugget">
+                                </div>
+                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                    <label for="Electron" class="bold-label">Electrode diameter mm:</label>
+                                    <input type="text" class="ms-2 form-control width-70" name="Electron"
+                                           id="Electron">
+                                </div>
+                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                    <label for="teatStrength" class="bold-label">Tear strength Kg:</label>
+                                    <input type="text" class="ms-2 form-control width-70" name="teatStrength"
+                                           id="teatStrength">
+                                </div>-->
+                                <!--
+                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                    <label for="minSpot" class="">Min spots distance mm:</label>
+                                    <input type="text" class="ms-2 form-control width-100" name="minSpot"
+                                           id="minSpot">
+                                </div> -->
+                                <!--
+                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                    <label for="minSheetOverlap" class="">Min sheet overlap mm:</label>
+                                    <input type="text" class="ms-2 form-control width-100" name="minSheetOverlap"
+                                           id="minSheetOverlap">
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-evenly">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="result" id="result" checked="">50Hz
+                                <label class="form-check-label" for="result">
+                                    
+                                </label>
+                            </div>
+                          <!--  <div class="form-check"> 
+                                <input class="form-check-input" type="radio" name="result" id="result2">
+                                <label class="form-check-label" for="result2">
+                                    60 HZ
+                                </label>
+                            </div>-->
+                        </div>
+                        <div class="d-flex justify-content-center pb-1">
+                            <button class="btn pressure-btn rounded-0 bg-blue text-white copy">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+     <nav id="sidebarMenu" class="d-md-block bg-light sidebar collapse">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <button type="button" id="btnCreateNewProgram" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label">New Program</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnImportProgram">Import Program</button>
+                        </li>
+                        <li class="nav-item">
+                            <input type="file" style="display: none;" id="importInputFile">
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnCopyProgram" onclick="openCopyProgramModel();">Copy Program</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnBackUp">Back Up</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnGlobal" type="button" onclick="window.location.href='global.html'">Global Settings</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" onclick="window.location.href='sequencePV.html'" id="btnSeqPV" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label">Sequence PV</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn bg-danger text-white w-100 my-2 rounded-0 bold-label" data-bs-toggle="modal" onclick="viewErrorCodes()">Error List</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+  </div>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script>
+
+    let program_selection_data = [];
+    let timerDetails = {}
+    var controllerDataInterval;
+    var timerStatusInterval;
+    var isSyncFromTimerEnabled = false;
+    var sheetTypesResponse;
+    var sheetThicknesses = [];
+
+    function onWeld2ForceChange(val) {
+
+        if (val == "" || isNaN(parseInt(val))) {
+            return;
+        }
+        else {
+            if (timerDetails
+                && timerDetails.timer_setting
+                && timerDetails.timer_setting.force_setting) {
+                $("#base_selection_value").val(parseFloat(val) / timerDetails.timer_setting.force_setting.pv_1);
+            }
+
+        }
+    }
+
+    function getSheetThickness(typeId, thicknessId) {
+        $.ajax({
+            url: `http://localhost:3001/api/sheetThicknesses/${typeId}`,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (result) {
+                let htmlAppend = `<option>--select--</option>`
+                result.forEach(function (type) {
+                    htmlAppend += `<option value="${type._id}">${type.thk1}-${type.thk2}</option>`
+                });
+                sheetThicknesses = result
+                $('#thickness').html(htmlAppend)
+                if (thicknessId) {
+                    $("#thickness").val(thicknessId)
+                    let product = search(sheetThicknesses, thicknessId)
+                    setResultParameter(product)
+                }
+            }
+        })
+    }
+
+    function getSheetThicknessBasedOnModbusVal(typeId, thicknessModbusVal) {
+        $.ajax({
+            url: `http://localhost:3001/api/sheetThicknesses/${typeId}`,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function (result) {
+                let htmlAppend = `<option>--select--</option>`
+
+                let valThicknessId = "";
+
+                result.forEach(function (type) {
+                    if (thicknessModbusVal) {
+                        if (type.modbusValue == thicknessModbusVal) {
+                            valThicknessId = type._id;
+                        }
+                    }
+
+                    htmlAppend += `<option value="${type._id}">${type.thk1}-${type.thk2}</option>`
+                });
+
+                sheetThicknesses = result
+
+                $('#thickness').html(htmlAppend)
+                if (thicknessModbusVal) {
+                    $("#thickness").val(valThicknessId);
+                    let product = search(sheetThicknesses, valThicknessId)
+                    setResultParameter(product)
+                }
+            }
+        })
+    }
+
+    function setResultParameter(product) {
+
+        if (product) {
+            $("#current").val(product.current);
+            $("#weldTime").val(product.weldTime);
+            $("#force").val(product.force);
+            //$("#teatStrength").val(product.tearStrength);
+            //$("#Nugget").val(product.nuggetDia);
+            //$("#Electron").val(product.electrodDia);
+            $("#minSpot").val(product.spotDistance);
+            $("#minSheetOverlap").val(product.sheetOverlap);
+        } else {
+            $("#current").val("");
+            $("#weldTime").val("");
+            $("#force").val("");
+            //$("#teatStrength").val("");
+            //$("#Nugget").val("");
+            //$("#Electron").val("");
+            $("#minSpot").val("");
+            $("#minSheetOverlap").val("");
+        }
+    }
+    function search(data, criteria) {
+        for (let i = 0; i < data.length; i++) {
+            const product = data[i];
+
+            if (product._id === criteria) {
+                return product;
+            }
+        }
+
+        return null;
+    }
+
+
+    $(document).ready(function () {
+
+        handleUser();
+
+
+        getSheetType()
+
+        function getSheetType() {
+            $.ajax({
+                url: "http://localhost:3001/api/sheetType",
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (result) {
+                    sheetTypesResponse = result;
+                    let htmlAppend = `<option>--select--</option>`
+                    result.forEach(function (type) {
+                        htmlAppend += `<option value="${type._id}">${type.name}</option>`
+                    });
+
+                    $('#sheetType').html(htmlAppend)
+                    getTimerDetails(false)
+                }
+            })
+        }
+
+
+
+        function getTimerDetails(do_only_fetch) {
+            $.ajax({
+                url: `http://localhost:3001/api/timer/${localStorage.getItem('timer_id')}`,
+                contentType: "application/json",
+                dataType: 'json',
+                success: function (result) {
+                    if (do_only_fetch) {
+                        timerDetails = result;
+                        let { timer_configuration, program_selection } = result
+                        if (program_selection) {
+                            program_selection_data = program_selection;
+                        }
+                    }
+                    if (result && (do_only_fetch == false)) {
+                        timerDetails = result
+
+                        if (result.timer_setting.general.sync_from_timer) {
+                            let sync = result.timer_setting.general.sync_from_timer;
+
+                            swal("Sync from timer is enabled");
+
+                            $("#refresh").show();
+
+                            isSyncFromTimerEnabled = true;
+                            fetchProgramCountForSyncFromTimer();
+                        }
+
+                        {
+                            let { timer_configuration, program_selection } = result
+                            if (program_selection) {
+                                if (program_selection.length) {
+
+                                    if (isSyncFromTimerEnabled == false) {
+                                        setProgramSelection(program_selection);
+                                        setProgramParameters(program_selection[0].program_parameters);
+                                        onReweldCheckBoxChanged();
+                                        checkPreSqueeze();
+                                    }
+
+                                    program_selection_data = program_selection;
+
+                                    //fetchSequencePVData(program_selection[0].program_no);
+                                }
+                            }
+
+                            if (timer_configuration) {
+                                let { selectable_parameters, result_parameter, feed_back } = timer_configuration
+                                setSelectableParameters(selectable_parameters)
+                                setFeedBack(feed_back)
+                            }
+                        }
+
+                        updateTimerStatus(result);
+                        startFetchingControllerData();
+                    }
+                }
+            })
+        }
+
+        function setProgramSelection(program_selection, inde) {
+
+            let htmlAppend = `<option>--Select--</option>`
+            program_selection.forEach((program, index) => {
+
+                htmlAppend += `<option value="${program.program_no}">${program.program_no}</option>`
+            })
+            $('#program_no').append(htmlAppend)
+
+            if (program_selection.length) {
+                $("#program_id").val(program_selection[0]._id)
+                $('#program_no').val(program_selection[0].program_no)
+                $("#program_name").val(program_selection[0].program_name)
+                $("#gun_no").val(program_selection[0].gun_no)
+                $("#weld").prop('checked', program_selection[0].weld)
+                $("#re_weld_schedule").prop('checked', program_selection[0].re_weld_schedule)
+                $("#schedule").val(program_selection[0].schedule)
+                $("#reweld_factor").val(program_selection[0].reweld_factor)
+                $("#impulse").val(program_selection[0].impulse)
+                $("#monitoring").val(program_selection[0].monitoring)
+                $("#base_selection_value").val(program_selection[0].base_selection_value)
+                $("#mode_of_selection_of_current").val(program_selection[0].mode_of_selection_of_current)
+            }
+
+        }
+
+        function setFeedBack(feed_back) {
+            let { weld_1, weld_2, weld_3, global_parameter } = feed_back
+
+
+            $("#actual_current").val(weld_1.actual_current)
+            $("#actual_weld_time").val(weld_1.actual_weld_time)
+            $("#power_factor").val(weld_1.power_factor)
+            $("#heat_percentage").val(weld_1.heat_percentage)
+
+
+            $("#w2_actual_current").val(weld_2.actual_current)
+            $("#w2_actual_weld_time").val(weld_2.actual_weld_time)
+            $("#w2_power_factor").val(weld_2.power_factor)
+            $("#w2_heat_percentage").val(weld_3.heat_percentage)
+
+            $("#w3_actual_current").val(weld_3.actual_current)
+            $("#w3_actual_weld_time").val(weld_3.actual_weld_time)
+            $("#w3_power_factor").val(weld_3.power_factor)
+            $("#w3_heat_percentage").val(weld_3.heat_percentage)
+
+            $("#global_program_no").val(global_parameter.program_no)
+            $("#spot_count").val(global_parameter.spot_count)
+            $("#job_count").val(global_parameter.job_count)
+        }
+
+        function setProgramParameters(program_parameters, monitorId) {
+
+            // let { program_parameter_object_1, program_parameter_object_2, program_parameter_object_3, program_parameter_object_4 } = program_parameters
+            let monitoringVal = monitorId
+
+            if (timerDetails.program_selection.length) {
+                monitoringVal = monitorId || timerDetails.program_selection[0].monitoring
+
+                if (monitoringVal == 2) {
+                    $(".weld2 fieldset").css("border", "1px solid blue");
+                    $(".weld2 input").removeAttr("disabled");
+
+                    $(".weld3 fieldset").css("border", "1px solid blue");
+                    $(".weld3 input").removeAttr("disabled");
+
+                    $(".weld1_custom fieldset").css("border", "1px solid blue");
+                    $(".weld1_custom input").removeAttr("disabled")
+
+
+                    $(".off-time fieldset").css("border", "1px solid blue");
+                    $(".off-time input").removeAttr("disabled")
+
+
+                    $(".down-slope fieldset").css("border", "1px solid blue");
+                    $(".down-slope input").removeAttr("disabled")
+
+
+                    $(".pre_squeeze fieldset").css("border", "1px solid blue");
+                    $(".pre_squeeze input").removeAttr("disabled")
+
+
+                    $(".up_slope fieldset").css("border", "1px solid blue");
+                    $(".up_slope input").removeAttr("disabled")
+
+
+                    $(".weld3 fieldset").css("border", "1px solid blue");
+                    $(".weld3 input").removeAttr("disabled")
+
+                } else {
+                    $(".weld2 fieldset").css("border", "1px solid grey");
+                    $(".weld2 input").removeAttr("disabled");
+
+                    $('#cool_l_t').prop("disabled", "disabled")
+                    $('#cool_l_t').val("")
+
+                    $(".weld1_custom fieldset").css("border", "1px solid grey");
+                    $(".weld1_custom input").prop("disabled", "disabled");
+                    $(".weld1_custom input").val('');
+
+                    // $(".off-time fieldset").css("border", "1px solid grey");
+                    // $(".off-time input").prop("disabled", "disabled");
+                    // $(".off-time input").val('');
+
+                    // $(".down-slope fieldset").css("border", "1px solid blue");
+                    // $(".down-slope input").prop("disabled", "disabled");
+                    // $(".down-slope input").val('');
+
+                    // $(".pre_squeeze fieldset").css("border", "1px solid blue");
+                    // $(".pre_squeeze input").prop("disabled", "disabled");
+                    // $(".pre_squeeze input").val('');
+
+                    // $(".up_slope fieldset").css("border", "1px solid blue");
+                    // $(".up_slope input").prop("disabled", "disabled");
+                    // $(".up_slope input").val('');
+
+                    $(".weld3 fieldset").css("border", "1px solid grey");
+                    $(".weld3 input").prop("disabled", "disabled");
+                    $(".weld3 input").val('');
+
+
+                    $("#cool_2_t").val('')
+                    $("#weld_3_t").val('')
+                    $("#weld_3_ef").val('')
+                    $("#weld_3_l").val('')
+                }
+            }
+
+
+            if (!program_parameters) {
+                console.error('program_parameters is undefined or null');
+                $("#pre_squeeze_t").val('')
+                $("#squeeze_t").val('')
+                $("#up_slope_t").val('')
+                $("#blanking_cycle_t").val('')
+
+
+                $("#weld_t").val('')
+                $("#weld_ef").val('')
+                $("#weld_l").val('')
+                $("#cool_l_t").val('')
+
+
+                $("#weld_2_t").val('')
+                $("#weld_2_ef").val('')
+                $("#weld_2_l").val('')
+                $("#cool_2_t").val('')
+
+
+                $("#weld_3_t").val('')
+                $("#weld_3_ef").val('')
+                $("#weld_3_l").val('')
+                $("#down_slope_t").val('')
+                $("#down_slope_hold_t").val('')
+                $("#off_time_t").val('')
+                return; // or handle the error accordingly
+            }
+
+
+            let {
+                program_parameter_object_1,
+                program_parameter_object_2,
+                program_parameter_object_3,
+                program_parameter_object_4,
+            } = program_parameters;
+
+            if (!program_parameter_object_1 || !program_parameter_object_2 || !program_parameter_object_3 || !program_parameter_object_4) {
+                console.error('One or more program parameter objects are missing');
+                return; // or handle the error accordingly
+            }
+
+            let { pre_squeeze_t, squeeze_t, up_slope_t, blanking_cycle_t } = program_parameter_object_1
+            $("#pre_squeeze_t").val(pre_squeeze_t)
+            $("#squeeze_t").val(squeeze_t)
+            $("#up_slope_t").val(up_slope_t)
+            $("#blanking_cycle_t").val(blanking_cycle_t)
+
+            let { weld_t, weld_ef, weld_l, cool_l_t } = program_parameter_object_2
+
+            $("#weld_t").val(monitoringVal ? monitoringVal == 2 ? weld_t : '' : weld_l)
+            $("#weld_ef").val(monitoringVal ? monitoringVal == 2 ? weld_ef : '' : weld_ef)
+            $("#weld_l").val(monitoringVal ? monitoringVal == 2 ? weld_l : '' : weld_l)
+            $("#cool_l_t").val(monitoringVal ? monitoringVal == 2 ? cool_l_t : '' : cool_l_t)
+
+            let { weld_2_t, weld_2_ef, weld_2_l, cool_2_t } = program_parameter_object_3
+            $("#weld_2_t").val(weld_2_t)
+            $("#weld_2_ef").val(weld_2_ef)
+            $("#weld_2_l").val(weld_2_l)
+            $("#cool_2_t").val(cool_2_t)
+
+            let {
+                weld_3_t,
+                weld_3_ef,
+                weld_3_l,
+                down_slope_t,
+                down_slope_hold_t,
+                off_time_t
+            } = program_parameter_object_4
+            $("#weld_3_t").val(monitoringVal ? monitoringVal == 2 ? weld_3_t : '' : weld_3_t)
+            $("#weld_3_ef").val(monitoringVal ? monitoringVal == 2 ? weld_3_ef : '' : weld_3_ef)
+            $("#weld_3_l").val(monitoringVal ? monitoringVal == 2 ? weld_3_l : '' : weld_3_l)
+            $("#down_slope_t").val(down_slope_t)
+            $("#down_slope_hold_t").val(down_slope_hold_t)
+            $("#off_time_t").val(off_time_t)
+        }
+
+        function setSelectableParameters(selectable_parameters) {
+            $('#sheetType').val(selectable_parameters.sheetTypeId)
+            getSheetThickness(selectable_parameters.sheetTypeId, selectable_parameters.sheetThicknessId)
+        }
+
+
+        var thickness = $("#thickness");
+
+        $("#saveProgram").click(function () {
+            saveProgram()
+        });
+        $("#sendProgram").click(async function () {
+            saveProgram(1)
+        });
+
+        $("#sheetType").on("change", function () {
+            var sheetTypeId = $(this).val();
+            if (sheetTypeId) {
+                getSheetThickness(sheetTypeId)
+            }
+
+        })
+
+        $("#thickness").on("change", function () {
+            const data = sheetThicknesses;
+            const product = search(data, this.value);
+
+            setResultParameter(product)
+        })
+
+        $("#program_no").on("change", function () {
+
+            if (isSyncFromTimerEnabled) {
+                handleProgramChangedSyncFromTimer(this.value);
+            }
+            else {
+                const program = searchProgramSelection(program_selection_data, this.value);
+                $('#program_id').val(program._id)
+                if (program) {
+                    $("#program_name").val(program.program_name)
+                    $("#gun_no").val(program.gun_no)
+                    $("#weld").prop('checked', program.weld)
+                    $("#re_weld_schedule").prop('checked', program.re_weld_schedule)
+                    $("#schedule").val(program.schedule)
+                    $("#reweld_factor").val(program.reweld_factor)
+                    $("#impulse").val(program.impulse)
+                    $("#monitoring").val(program.monitoring)
+                    $("#base_selection_value").val(program.base_selection_value)
+                    $("#mode_of_selection_of_current").val(program.mode_of_selection_of_current)
+                    setProgramParameters(program.program_parameters, program.monitoring)
+
+                    //fetchSequencePVData(program.program_no);
+                }
+
+            }
+
+        })
+
+
+
+
+        function searchProgramSelection(data, criteria) {
+            for (let i = 0; i < data.length; i++) {
+                const product = data[i];
+
+                if (product.program_no == criteria) {
+                    return product;
+                }
+            }
+
+            return null;
+        }
+
+
+        if (!timerDetails.timer_configuration) {
+
+            $(".weld2 fieldset").css("border", "1px solid grey");
+            $(".weld2 input").prop("disabled", "disabled");
+
+            $(".weld3 fieldset").css("border", "1px solid grey");
+            $(".weld3 input").prop("disabled", "disabled");
+        }
+
+
+        async function saveProgram(isReturn = 0) {
+
+            clearInterval(controllerDataInterval);
+            clearInterval(timerStatusInterval);
+
+            let timerData = timerDetails.program_selection && timerDetails.program_selection[0] && timerDetails.program_selection[0].program_parameters
+
+            let obj2_weld_l = $("#weld_l").val()
+            let obj3_weld_l = $("#weld_2_l").val()
+            let obj4_weld_l = $("#weld_3_l").val()
+
+            if (timerData) {
+                let { program_parameter_object_2, program_parameter_object_3, program_parameter_object_4 } = timerData
+
+                obj2_weld_l = obj2_weld_l == program_parameter_object_2.weld_l ? $("#weld_l").val() : parseFloat($("#weld_l").val())
+                obj3_weld_l = obj3_weld_l == program_parameter_object_3.weld_2_l ? $("#weld_2_l").val() : parseFloat($("#weld_2_l").val())
+                obj4_weld_l = obj4_weld_l == program_parameter_object_4.weld_3_l ? $("#weld_3_l").val() : parseFloat($("#weld_3_l").val())
+            }
+
+            if (isFormValid() == false) {
+                return;
+            }
+
+            let data = {
+                timer_id: localStorage.getItem('timer_id'),
+                program_id: $("#program_id").val(),
+                timer_configuration: {
+                    selectable_parameters: {
+                        sheetTypeId: $('#sheetType').val(),
+                        sheetThicknessId: $("#thickness").val(),
+                        welding_class: ''
+                    },
+                    program_selection: {
+                        program_no: $("#program_no").val(),
+                        program_name: $("#program_name").val(),
+                        gun_no: $("#gun_no").val(),
+                        weld: $("#weld").is(':checked'),
+                        re_weld_schedule: $("#re_weld_schedule").is(':checked'),
+                        schedule: $("#schedule").val(),
+                        reweld_factor: $("#reweld_factor").val(),
+                        impulse: $("#impulse").val(),
+                        monitoring: $("#monitoring").val(),
+                        base_selection_value: $("#base_selection_value").val(),
+                        mode_of_selection_of_current: $("#mode_of_selection_of_current").val()
+                    },
+                    result_parameter: {
+                        current_ka: parseInt($("#current").val()),
+                        weld_time: parseInt($("#weldTime").val()),
+                        force_kgn: parseInt($("#force").val()),
+                        //tear_strength_kg: parseInt($("#teatStrength").val()),
+                        //wedding_nugget_mm: parseInt($("#Nugget").val()),
+                        //electron_diameter_mm: parseInt($("#Electron").val()),
+                        frequency: '50Hz'
+                    },
+                    program_parameters: {
+                        program_parameter_object_1: {
+                            pre_squeeze_t: parseInt($("#pre_squeeze_t").val()),
+                            squeeze_t: parseInt($("#squeeze_t").val()),
+                            up_slope_t: parseInt($("#up_slope_t").val()),
+                            blanking_cycle_t: parseInt($("#blanking_cycle_t").val()),
+                        },
+                        program_parameter_object_2: {
+                            weld_t: parseInt($("#weld_t").val()),
+                            weld_ef: parseInt($("#weld_ef").val()),
+                            weld_l: parseFloat(obj2_weld_l),
+                            cool_l_t: parseInt($("#cool_l_t").val()),
+                        },
+                        program_parameter_object_3: {
+                            weld_2_t: parseInt($("#weld_2_t").val()),
+                            weld_2_ef: parseInt($("#weld_2_ef").val()),
+                            weld_2_l: parseFloat(obj3_weld_l),
+                            cool_2_t: parseInt($("#cool_2_t").val()),
+                        },
+                        program_parameter_object_4: {
+                            weld_3_t: parseInt($("#weld_3_t").val()),
+                            weld_3_ef: parseInt($("#weld_3_ef").val()),
+                            weld_3_l: parseFloat(obj4_weld_l),
+                            down_slope_t: parseInt($("#down_slope_t").val()),
+                            down_slope_hold_t: parseInt($("#down_slope_hold_t").val()),
+                            off_time_t: parseInt($("#off_time_t").val()),
+                        },
+                    },
+                    feed_back: {
+                        weld_1: {
+                            actual_current: $("#actual_current").val(),
+                            actual_weld_time: $("#actual_weld_time").val(),
+                            power_factor: $("#power_factor").val(),
+                            heat_percentage: $("#heat_percentage").val(),
+                        },
+                        weld_2: {
+                            actual_current: $("#w2_actual_current").val(),
+                            actual_weld_time: $("#w2_actual_weld_time").val(),
+                            power_factor: $("#w2_power_factor").val(),
+                            heat_percentage: $("#w2_heat_percentage").val(),
+                        },
+                        weld_3: {
+                            actual_current: $("#w3_actual_current").val(),
+                            actual_weld_time: $("#w3_actual_weld_time").val(),
+                            power_factor: $("#w3_power_factor").val(),
+                            heat_percentage: $("#w3_heat_percentage").val(),
+                        },
+                        global_parameter: {
+                            program_no: $("#global_program_no").val(),
+                            spot_count: $("#spot_count").val(),
+                            job_count: $("#job_count").val(),
+                        },
+                    },
+                }
+            }
+
+            let arrayChangedObj = [];
+
+
+            {
+                if (timerDetails
+                    && timerDetails.timer_configuration
+                    && timerDetails.timer_configuration.selectable_parameters) {
+                    let selectableParams = compareJSON(timerDetails.timer_configuration.selectable_parameters, data.timer_configuration.selectable_parameters);
+                    console.log("changed keys = ", selectableParams);
+
+                    if (Object.keys(selectableParams).length > 0) {
+                        let changedSelectableParams = getChangedObject(selectableParams, timerDetails.timer_configuration.selectable_parameters, data.timer_configuration.selectable_parameters);
+                        console.log("Changed Obj Stepper", changedSelectableParams);
+
+                        arrayChangedObj.push(changedSelectableParams);
+                    }
+                }
+            }
+
+            {
+                if (timerDetails
+                    && timerDetails.timer_configuration
+                    && timerDetails.timer_configuration.result_parameter) {
+                    let resultParams = compareJSON(timerDetails.timer_configuration.result_parameter, data.timer_configuration.result_parameter);
+                    console.log("resultParams keys = ", resultParams);
+
+                    if (Object.keys(resultParams).length > 0) {
+                        let changedResultParams = getChangedObject(resultParams, timerDetails.timer_configuration.result_parameter, data.timer_configuration.result_parameter);
+                        console.log("Changed result params", changedResultParams);
+
+                        arrayChangedObj.push(changedResultParams);
+                    }
+                }
+            }
+
+
+            /*
+             * In case of program params, first we need to fetch old program params values from timerDetails object based
+             * on the program no, then perform the comparison.
+             */
+
+            {
+                let programId = data.timer_configuration.program_selection.program_no;
+                let newProgramParams = data.timer_configuration.program_parameters;
+
+                const oldProgramParams = searchProgramSelection(program_selection_data, programId);
+                if (oldProgramParams != null && newProgramParams != null && oldProgramParams.program_parameters != null) {
+                    let programParamChangedKeys = compareJSON(oldProgramParams.program_parameters, newProgramParams);
+                    console.log("resultParams keys = ", programParamChangedKeys);
+
+                    if (Object.keys(programParamChangedKeys).length > 0) {
+                        let ppChangedObj = getChangedObject(programParamChangedKeys, oldProgramParams.program_parameters, newProgramParams);
+                        console.log("Changed result params", ppChangedObj);
+
+                        arrayChangedObj.push(ppChangedObj);
+                    }
+                }
+
+                if (oldProgramParams.program_name != parseInt(data.timer_configuration.program_selection.program_name)) {
+                    arrayChangedObj.push({ "old": { "program_name": oldProgramParams.program_name }, "new": parseInt(data.timer_configuration.program_selection.program_name) });
+                }
+
+                if (oldProgramParams.gun_no != parseInt(data.timer_configuration.program_selection.gun_no)) {
+                    arrayChangedObj.push({ "old": { "gun_no": oldProgramParams.gun_no }, "new": parseInt(data.timer_configuration.program_selection.gun_no) });
+                }
+
+                if (oldProgramParams.weld != data.timer_configuration.program_selection.weld) {
+                    arrayChangedObj.push({ "old": { "weld": oldProgramParams.weld }, "new": parseInt(data.timer_configuration.program_selection.weld) });
+                }
+
+                if (oldProgramParams.re_weld_schedule != (data.timer_configuration.program_selection.re_weld_schedule)) {
+                    arrayChangedObj.push({ "old": { "re_weld_schedule": oldProgramParams.re_weld_schedule }, "new": parseInt(data.timer_configuration.program_selection.re_weld_schedule) });
+                }
+
+                if (oldProgramParams.schedule != parseInt(data.timer_configuration.program_selection.schedule)) {
+                    arrayChangedObj.push({ "old": { "schedule": oldProgramParams.schedule }, "new": parseInt(data.timer_configuration.program_selection.schedule) });
+                }
+
+                if (oldProgramParams.reweld_factor != parseInt(data.timer_configuration.program_selection.reweld_factor)) {
+                    arrayChangedObj.push({ "old": { "reweld_factor": oldProgramParams.reweld_factor }, "new": parseInt(data.timer_configuration.program_selection.reweld_factor) });
+                }
+
+                if (oldProgramParams.impulse != parseInt(data.timer_configuration.program_selection.impulse)) {
+                    arrayChangedObj.push({ "old": { "impulse": oldProgramParams.impulse }, "new": parseInt(data.timer_configuration.program_selection.impulse) });
+                }
+
+                if (oldProgramParams.monitoring != parseInt(data.timer_configuration.program_selection.monitoring)) {
+                    arrayChangedObj.push({ "old": { "monitoring": oldProgramParams.monitoring }, "new": parseInt(data.timer_configuration.program_selection.monitoring) });
+                }
+
+                if (oldProgramParams.base_selection_value != parseFloat(data.timer_configuration.program_selection.base_selection_value)) {
+                    arrayChangedObj.push({ "old": { "base_selection_value": oldProgramParams.base_selection_value }, "new": parseInt(data.timer_configuration.program_selection.base_selection_value) });
+                }
+
+                if (oldProgramParams.mode_of_selection_of_current != parseInt(data.timer_configuration.program_selection.mode_of_selection_of_current)) {
+                    arrayChangedObj.push({ "old": { "mode_of_selection_of_current": oldProgramParams.mode_of_selection_of_current }, "new": parseInt(data.timer_configuration.program_selection.mode_of_selection_of_current) });
+                }
+            }
+
+            if (isReturn) {
+                data['isReturn'] = 1
+            }
+
+            $.ajax({
+                url: "http://localhost:3001/api/timer",
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (result) {
+                    if (!isReturn) {
+                        swal("Program saved");
+                        //  window.location.href = 'config.html'
+                    }
+
+                    logChangedKeys(arrayChangedObj);
+
+                    // $("#weld_l").val(obj2_weld_l)
+                    // $("#weld_2_l").val(obj3_weld_l)
+                    // $("#weld_2_l").val(obj4_weld_l)
+                    if (isReturn) {
+                        if (result) {
+                            let resPos = replaceBooleanWithNumbers(result.valuesArr)
+                            let data = result
+                            //  data['valuesArr'] =resPos
+                            //  data['resPos'] =resPos
+
+                            // Store data in local storage
+                            localStorage.setItem('modbusData', JSON.stringify(data));
+
+                            $('#sendProgramResponse').html(`
+                                <div class="row">
+                                  <p>Ip Address: ${result.testIpAddress}</p>
+                                  <p>Port No: ${result.testPort}</p>
+                                  <p>Timer ID: ${result.timerID}</p>
+                                  <p>Register Start Address: ${result.registerStartAddress}</p>
+                                  <p>Value: ${JSON.stringify(resPos)}</p>
+                                </div>
+                                `)
+
+
+                            let valuesArray = Object.values(resPos);
+                            let stringArr = valuesArray.map(element => `"${element}"`);
+
+                            data['valuesArr'] = stringArr;
+                            data['resPos'] = stringArr;
+
+                            sendDataToModbus(data)
+                            getTimerDetails(true);
+                        }
+                        return
+                    }
+                    else {
+                        //alert('Timer Config data updated')
+                        swal("Timer Config data updated");
+                        getTimerDetails(true);
+                        startFetchTimerData(timerDetails);
+                        //startFetchingControllerData();
+
+                    }
+                },
+                error: function (error) {
+                    console.error(error);
+
+                    startFetchTimerData(timerDetails);
+                    startFetchingControllerData();
+                }
+            })
+
+        }
+
+        // http://localhost:3002/writeValues deepak api
+        function sendDataToModbus(data) {
+            $.ajax({
+                url: "http://localhost:3002/writeValues",
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (result) {
+                    if (result.success) {
+                        setTimeout(function () { sendSingleDataToModbus_new(); }, 1000);
+
+                        //alert('Data sent to Timer');
+                        swal('Data sent to Timer');
+                        //openSendProgramModel()
+                        localStorage.setItem('modbus_response', JSON.stringify(result));
+
+
+                    } else {
+                        //alert("Could not send data to Timer, error = " + JSON.stringify(result));
+                        swal("Could not send data to Timer");
+                    }
+
+                    startFetchTimerData(timerDetails);
+                    startFetchingControllerData();
+                },
+                error: function (error) {
+                    //console.error(error);
+                    swal("Could not send data to Timer");
+
+                    startFetchTimerData(timerDetails);
+                    startFetchingControllerData();
+                }
+            })
+        }
+
+        function sendSingleDataToModbus_new() {
+            let address = 123;
+            let value = 1;
+            let Newvalue = 1
+            let { timer_setting } = timerDetails
+            let data = {
+                testIpAddress: timer_setting.ethernet.ip_address,
+                testPort: timer_setting.ethernet.port,
+                timerID: 1,
+                registerStartAddress: 123,
+                resPos: Newvalue,
+            };
+            if (address && value) {
+                $.ajax({
+                    url: "http://localhost:3002/writeValue",
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function (result) {
+
+                        // alert('Data sent single value to modbus');
+                        localStorage.setItem('modbus_response_single_value', JSON.stringify(result));
+                        // closeSendSingleValue()
+                        // $('#single_address').val('')
+                        // $('#single_address_value').val('')
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                })
+            }
+
+        }
+
+
+        function replaceBooleanWithNumbers(Obj) {
+            let newObj = {}
+            Object.keys(Obj).forEach((element) => {
+
+                if (typeof Obj[element] === 'boolean') {
+                    newObj[element] = Obj[element] ? 1 : 0
+                } else {
+                    newObj[element] = Obj[element] ? Obj[element] : 0
+                }
+            });
+
+            return newObj;
+        }
+
+        $("#monitoring").change(function () {
+
+            if (this.value == 2) {
+                //$(".weld2 fieldset").css("border", "1px solid blue");
+                $(".weld2 input").removeAttr("disabled");
+
+                //$(".weld3 fieldset").css("border", "1px solid blue");
+                $(".weld3 input").removeAttr("disabled");
+
+                //$(".weld2 fieldset").css("border", "1px solid blue");
+                $(".weld2 input").removeAttr("disabled");
+
+                //$(".weld3 fieldset").css("border", "1px solid blue");
+                $(".weld3 input").removeAttr("disabled");
+
+                //$(".weld1_custom fieldset").css("border", "1px solid blue");
+                $(".weld1_custom input").removeAttr("disabled")
+
+
+                //$(".off-time fieldset").css("border", "1px solid blue");
+                $(".off-time input").removeAttr("disabled")
+
+
+                //$(".down-slope fieldset").css("border", "1px solid blue");
+                $(".down-slope input").removeAttr("disabled")
+
+
+                //$(".pre_squeeze fieldset").css("border", "1px solid blue");
+                $(".pre_squeeze input").removeAttr("disabled")
+
+
+                //$(".up_slope fieldset").css("border", "1px solid blue");
+                $(".up_slope input").removeAttr("disabled")
+
+
+                //$(".weld3 fieldset").css("border", "1px solid blue");
+                $(".weld3 input").removeAttr("disabled")
+
+
+                if (timerDetails && timerDetails.program_parameters) {
+                    setProgramParameters(timerDetails.program_parameters)
+                }
+
+            } else {
+                // $(".weld2 fieldset").css("border", "1px solid grey");
+                // $(".weld2 input").prop("disabled", "disabled");
+
+                //$(".weld3 fieldset").css("border", "1px solid grey");
+                $(".weld3 input").prop("disabled", "disabled");
+                //$(".weld2 fieldset").css("border", "1px solid grey");
+                $(".weld2 input").removeAttr("disabled");
+
+                $('#cool_l_t').prop("disabled", "disabled")
+                $('#cool_l_t').val("")
+
+                //$(".weld1_custom fieldset").css("border", "1px solid grey");
+                $(".weld1_custom input").prop("disabled", "disabled");
+                $(".weld1_custom input").val('');
+
+                // $(".off-time fieldset").css("border", "1px solid grey");
+                // $(".off-time input").prop("disabled", "disabled");
+                // $(".off-time input").val('');
+
+                // $(".down-slope fieldset").css("border", "1px solid blue");
+                // $(".down-slope input").prop("disabled", "disabled");
+                // $(".down-slope input").val('');
+
+                // $(".pre_squeeze fieldset").css("border", "1px solid blue");
+                // $(".pre_squeeze input").prop("disabled", "disabled");
+                // $(".pre_squeeze input").val('');
+
+                // $(".up_slope fieldset").css("border", "1px solid blue");
+                // $(".up_slope input").prop("disabled", "disabled");
+                // $(".up_slope input").val('');
+
+                //$(".weld3 fieldset").css("border", "1px solid grey");
+                $(".weld3 input").prop("disabled", "disabled");
+                $(".weld3 input").val('');
+
+
+                $("#cool_2_t").val('')
+                $("#weld_3_t").val('')
+                $("#weld_3_ef").val('')
+                $("#weld_3_l").val('')
+            }
+        })
+
+        $(".copy").on("click", function () {
+            const T = $("#weldTime").val();
+            const F = $("#force").val();
+            const C = $("#current").val();
+
+            const d = $("#monitoring");
+
+            if (d.val() == "2") {
+                $("#weld_t").val(T);
+                $("#weld_ef").val(F);
+                //$("#weld_l").val(C);
+                $("#weld_2_t").val(T);
+                $("#weld_2_ef").val(F);
+                //$("#weld_2_l").val(C);
+                $("#weld_3_t").val(T);
+                $("#weld_3_ef").val(F);
+                //$("#weld_3_l").val(C);
+            }
+            else {
+                $("#weld_2_t").val(T);
+                $("#weld_2_ef").val(F);
+                $("#weld_2_l").val(C);
+            }
+
+            if (timerDetails
+                && timerDetails.timer_setting
+                && timerDetails.timer_setting.force_setting) {
+
+                $("#base_selection_value").val(parseFloat(F) / timerDetails.timer_setting.force_setting.pv_1);
+            }
+            else {
+                //alert("Please configure the PV values");
+                swal("Please configure the PV values");
+            }
+        })
+
+
+        //$('#new_program_save').on("click", function () {
+        $('#btnCreateNewProgram').on("click", function () {
+            createProgram()
+        })
+
+        function createProgram() {
+            let data = {
+                timer_id: localStorage.getItem('timer_id'),
+                program_id: "",
+                program_no: "",
+                program_name: "",
+                gun_no: ""
+            };
+
+            $.ajax({
+                url: "http://localhost:3001/api/createProgram",
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (result) {
+                    if (result) {
+                        //alert('New program created successfully')
+
+                        swal("New program created successfully")
+                            .then((value) => {
+                                window.location.href = 'config.html'
+                            });
+
+
+                    }
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            })
+        }
+    });
+
+    function fetchSequencePVData(programNo) {
+
+        let timerid = localStorage.getItem("timer_id");
+
+        let url = "http://localhost:3001/api/getSequencePV/" + timerid + "/" + programNo;
+        doAjaxGetWithoutParam(url,
+            function (result) {
+                if (result.success) {
+
+                    let data = result.data;
+                    if (data) {
+                        $("#pre_squeeze_t").val(data.force.pt_1);
+                        $("#squeeze_t").val(data.force.pt_2);
+                        $("#up_slope_t").val(data.force.pt_3);
+                        $("#blanking_cycle_t").val(data.force.pt_4);
+                        $("#weld_t").val(data.force.pt_5);
+                        $("#weld_2_t").val(data.force.pt_6);
+                        $("#weld_3_t").val(data.force.pt_7);
+                        $("#down_slope_t").val(data.force.pt_8);
+                        $("#down_slope_hold_t").val(data.force.pt_9);
+                        $("#off_time_t").val(data.force.pt_10);
+                    }
+                }
+                else {
+                    swal(result.message);
+                }
+            },
+            function (error) {
+                swal("Error while fetching PV data" + JSON.stringify(error));
+            }
+        );
+    }
+
+    function onModeOfSelectionCurrent(elm) {
+        let mode = elm.value;
+
+        if (mode == "1") {
+            $("#weld_1_heat_label").html('l(KA):');
+            $("#weld_2_heat_label").html('l(KA):');
+            $("#weld_3_heat_label").html('l(KA):');
+
+            $("#weld_l").val('');
+            $("#weld_2_l").val('');
+        }
+        else if (mode == "2") {
+            $("#weld_1_heat_label").html('Heat %:');
+            $("#weld_2_heat_label").html('Heat %:');
+            $("#weld_3_heat_label").html('Heat %:');
+
+            $("#weld_l").val('');
+            $("#weld_3_l").val('');
+            $("#weld_2_l").val('');
+        }
+    }
+
+    function updateTimerStatus(timerData) {
+        if (timerData.timer_setting && timerData.timer_setting.general.name) {
+            let name = timerData.timer_setting.general.name;
+            $("#time_name").html(name);
+
+            startFetchTimerData(timerData);
+        }
+    }
+
+    function startFetchTimerData(timerData) {
+        timerStatusInterval = setInterval(function () {
+            fetchTimerData(timerData);
+        }, 3456);
+    }
+
+    function fetchTimerData(timerDataObj) {
+
+        let apiData = {
+            testIpAddress: timerDataObj.timer_setting.ethernet.ip_address,
+            testPort: parseInt(timerDataObj.timer_setting.ethernet.port),
+            timerID: 1,
+            registerStartAddress: 247,
+            numRegisters: 5
+        };
+
+        $.ajax({
+            url: "http://localhost:3002/readValues",
+            contentType: "application/json",
+            dataType: 'json',
+            type: "POST",
+            data: JSON.stringify(apiData),
+            success: function (result) {
+                console.log("Api data result", result);
+
+                if (result.success) {
+                    let valueArr = result.data;
+
+                    updateView(timerDataObj, valueArr);
+                }
+                else {
+                    updateView(timerDataObj, [-1, 0, 0, 0, 0]);
+                }
+            }
+        });
+    }
+
+    function updateView(timerDataObj, valueArr) {
+
+        //valueArr = [3, 2, 3, 2, 0];
+
+        let section1Val = valueArr[0];
+        let section2Val = valueArr[1];
+        let section3Val = valueArr[2];
+        let section4Val = valueArr[3];
+        let section5Val = valueArr[4];
+
+        switch (section1Val) {
+            case -1: {
+                $("#section_1").css('background-color', 'Grey');
+            }
+                break;
+
+            default: {
+                $("#section_1").css('background-color', 'green');
+            }
+                break;
+        }
+
+        switch (section2Val) {
+
+            case 1: {
+                $("#section_2").css('background-color', 'green');
+            }
+                break
+
+            case 2: {
+                $("#section_2").css('background-color', 'red');
+            }
+                break
+
+            case 3: {
+                $("#section_2").css('background-color', 'red');
+            }
+                break;
+
+            default: {
+                $("#section_2").css('background-color', 'white');
+            }
+                break
+        }
+
+        switch (section3Val) {
+            case 0:
+            case 1: {
+                $("#section_3").css('background-color', 'grey');
+            }
+                break
+
+            case 2: {
+                $("#section_3").css('background-color', 'white');
+            }
+                break
+
+            case 3: {
+                $("#section_3").css('background-color', 'yellow');
+            }
+                break
+
+            case 4: {
+                $("#section_3").css('background-color', 'red');
+            }
+                break
+
+        }
+
+        switch (section4Val) {
+
+
+            case 1: {
+                $("#section_4").css('background-color', 'grey');
+            }
+                break
+
+            case 2: {
+                $("#section_4").css('background-color', 'orange');
+            }
+                break
+
+            case 3: {
+                $("#section_4").css('background-color', 'yellow');
+            }
+                break
+
+            case 4: {
+                $("#section_4").css('background-color', 'red');
+            }
+                break
+
+            default: {
+                $("#section_4").css('background-color', 'white');
+            }
+                break
+        }
+
+        switch (section5Val) {
+            case 0: {
+                $("#section_5").css('background-color', 'white');
+            }
+                break
+
+            case 1: {
+                $("#section_5").css('background-color', 'white');
+            }
+                break
+
+            case 2: {
+                $("#section_5").css('background-color', 'red');
+            }
+                break
+
+            default: {
+                $("#section_5").css('background-color', 'white');
+                break
+            }
+        }
+    }
+
+    $("#btn_copy_program_single_mode").click(function () {
+        let fromPrgNo = $("#single_from_program").val();
+        let toPrgNo = $("#single_to_program").val();
+
+        if (fromPrgNo == '' || fromPrgNo == undefined || !fromPrgNo) {
+            //alert("Please enter From program number");
+            swal("Please enter From program number");
+            return;
+        }
+
+        if (toPrgNo == '' && toPrgNo == undefined || !toPrgNo) {
+            //alert("Please enter To program number");
+            swal("Please enter To program number");
+            return;
+        }
+
+        if (fromPrgNo == toPrgNo) {
+            //alert("From and To Program number cannot be same");
+            swal("From and To Program number cannot be same");
+            return;
+        }
+
+        let fromPrgNoExist = program_selection_data.filter(programObj => programObj.program_no == fromPrgNo).length > 0;
+        if (!fromPrgNoExist) {
+            //alert("Invalid From Program No.");
+            swal("Invalid From Program No.");
+            return;
+        }
+
+        let toPrgNoExist = program_selection_data.filter(programObj => programObj.program_no == toPrgNo).length > 0;
+        if (!toPrgNoExist) {
+            //alert("Invalid To Program No.");
+            swal("Invalid To Program No.");
+            return;
+        }
+
+        let postData = {
+            from: parseInt(fromPrgNo),
+            to: parseInt(toPrgNo),
+            timer_id: localStorage.getItem('timer_id')
+        }
+
+        $.ajax({
+            url: "http://localhost:3001/api/copyProgram",
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(postData),
+            success: function (result) {
+                if (result.success) {
+                    //alert("Program copied successfully");
+                    swal("Program copied successfully")
+                        .then((value) => {
+                            window.location.reload();
+                        });
+                }
+                else {
+                    //alert(result.message);
+                    swal(result.message);
+                }
+            }
+        })
+    });
+
+    $("#btn_copy_program_multi_mode").click(function () {
+        let fromPrgNo = $("#multi_from_program").val();
+        let toFromPrgNo = $("#multi_to_program_from").val();
+        let toToPrgNo = $("#multi_to_program_to").val();
+
+        if (fromPrgNo == '' || fromPrgNo == undefined || !fromPrgNo) {
+            //alert("Please enter From program number");
+            swal("Please enter From program number");
+            return;
+        }
+
+        if (toFromPrgNo == '' && toFromPrgNo == undefined || !toFromPrgNo) {
+            swal("Please enter To program number");
+            return;
+        }
+
+        if (toToPrgNo == '' && toToPrgNo == undefined || !toToPrgNo) {
+            swal("Please enter To program number");
+            return;
+        }
+
+        if ((fromPrgNo == toFromPrgNo) || (fromPrgNo == toToPrgNo)) {
+            swal("From and To Program number cannot be same");
+            return;
+        }
+
+        let fromPrgNoExist = program_selection_data.filter(programObj => programObj.program_no == fromPrgNo).length > 0;
+        if (!fromPrgNoExist) {
+            swal("Invalid From Program No.");
+            return;
+        }
+
+        let toPrgNoExist = program_selection_data.filter(programObj => programObj.program_no == toFromPrgNo).length > 0;
+        if (!toPrgNoExist) {
+            swal("Invalid To Program No.");
+            return;
+        }
+
+        let toToPrgNoExist = program_selection_data.filter(programObj => programObj.program_no == toToPrgNo).length > 0;
+        if (!toToPrgNoExist) {
+            swal("Invalid To Program No.");
+            return;
+        }
+
+        let postData = {
+            from: parseInt(fromPrgNo),
+            toStart: parseInt(toFromPrgNo),
+            toEnd: parseInt(toToPrgNo),
+            timer_id: localStorage.getItem('timer_id')
+        }
+
+        $.ajax({
+            url: "http://localhost:3001/api/copyProgramMultiple",
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(postData),
+            success: function (result) {
+                if (result.success) {
+                    //alert("Program copied successfully");
+                    swal("Program copied successfully")
+                        .then((value) => {
+                            window.location.reload();
+                        });
+
+                }
+                else {
+                    swal(result.message);
+                }
+            }
+        })
+    });
+
+    $("#btnBackUp").click(function () {
+
+        let tmp = JSON.stringify(program_selection_data);
+        let programDataCopy = JSON.parse(tmp);
+
+        programDataCopy.forEach(function (program) {
+            delete program.timer_id;
+        });
+
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(programDataCopy));
+        var downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", "Program.json");
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+    });
+
+    $("#btnImportProgram").click(function () {
+        document.getElementById("importInputFile").click();
+    });
+
+    document.getElementById('importInputFile')
+        .addEventListener('change', function () {
+
+            let fr = new FileReader();
+            fr.onload = function () {
+                let programData = fr.result;
+                console.log(programData);
+
+                if (confirm("Are you sure you want to import?")) {
+                    processImport(programData);
+                }
+            }
+
+            fr.readAsText(this.files[0]);
+        });
+
+    function processImport(programDataStr) {
+        try {
+            if (programDataStr != undefined && programDataStr.length > 0) {
+                let programData = JSON.parse(programDataStr);
+
+                if (programData.length <= 0) {
+                    swal("Invalid Import Program data");
+                    return;
+                }
+
+                let conflictData = checkForConflictInImport(programData);
+                if (conflictData.conflict) {
+
+                    let prgsNosArr = conflictData.conflictData.map(conflictPrg => conflictPrg.program_no);
+                    let prgsNosStr = prgsNosArr.join(",");
+
+                    let msg = "";
+                    msg += "Below program number(s) are present in both the system and import data. ";
+                    msg += "By continuing this import, the programs present in the system will get replaced by the programs present in the import data";
+                    msg += "\n";
+                    msg += "Program numbers are: ";
+                    msg += prgsNosStr;
+                    msg += "\n";
+                    msg += "Click OK if you want to continue."
+
+                    if (confirm(msg)) {
+                        callImportAPI(programData);
+                    }
+                }
+                else {
+                    callImportAPI(programData);
+                }
+
+            } else {
+                swal("Invalid Import data");
+            }
+        }
+        catch (err) {
+            console.log("Exception", err);
+            swal("Invalid Import Program data");
+            return;
+        }
+    }
+
+    function callImportAPI(programData) {
+        let timer_id = localStorage.getItem('timer_id');
+
+        let data = {
+            programData: programData,
+            timer_id: timer_id
+        }
+
+        $.ajax({
+            url: "http://localhost:3001/api/importProgram",
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (result) {
+                if (result.success) {
+                    //alert("Programs successfully imported");
+                    swal("Programs successfully imported")
+                        .then((value) => {
+                            window.location.href = "config.html";
+                        });
+
+                } else {
+                    swal("Could not import programs " + JSON.stringify(result));
+                }
+            },
+            error: function (error) {
+                //console.error(error);
+                swal("Could not import programs " + JSON.stringify(error));
+            }
+        })
+    }
+
+    function checkForConflictInImport(importProgramData) {
+        if (program_selection_data
+            && program_selection_data.length > 0) {
+            let conflictProgramsArr = [];
+
+            for (let i = 0; i < importProgramData.length; i++) {
+                let importProgram = importProgramData[i];
+
+                let conflictPrg = program_selection_data.find(prg => prg.program_no === importProgram.program_no);
+                if (conflictPrg) {
+                    conflictProgramsArr.push(conflictPrg);
+                }
+            }
+
+            if (conflictProgramsArr.length > 0) {
+                return {
+                    conflict: true,
+                    conflictData: conflictProgramsArr
+                }
+            }
+            else {
+                return {
+                    conflict: false
+                }
+            }
+        }
+        else {
+            return {
+                conflict: false
+            }
+        }
+    }
+
+    function startFetchingControllerData() {
+        controllerDataInterval = setInterval(fetchControllerData, 2345);
+    }
+
+    function fetchControllerData() {
+        let timerSlaveID = timerDetails.timer_setting.general.mock_timer_id;
+
+        let url = "http://localhost:3001/api/getLatestControllerData/" + timerSlaveID;
+        doAjaxGetWithoutParam(url,
+            function (result) {
+                if (result.success && result.data) {
+                    updateFeedbackData(result.data, result.error_desc);
+                }
+                else {
+                    swal(result.message);
+                }
+            },
+            function (error) {
+                swal("Error while fetching controller data" + JSON.stringify(error));
+            }
+        );
+    }
+
+    function updateFeedbackData(data, error_desc) {
+        //console.log(data);
+
+        $("#feedback_global_program_no").val(data.Prog_No);
+        $("#update_timestamp").val(data.Date_Time);
+
+        $("#actual_current").val(data.Weld1_ActualCurrent);
+        $("#actual_weld_time").val(data.Weld1_ActualWeldTime);
+        $("#power_factor").val(data.weld1_powerfactor);
+        $("#heat_percentage").val(data.weld1_Heat);
+
+        $("#w2_actual_current").val(data.Weld2_ActualCurrent);
+        $("#w2_actual_weld_time").val(data.Weld2_ActualWeldTime);
+        $("#w2_power_factor").val(data.weld2_powerfactor);
+        $("#w2_heat_percentage").val(data.weld2_Heat);
+
+        $("#w3_actual_current").val(data.Weld3_ActualCurrent);
+        $("#w3_actual_weld_time").val(data.Weld3_ActualWeldTime);
+        $("#w3_power_factor").val(data.weld3_powerfactor);
+        $("#w3_heat_percentage").val(data.weld3_Heat);
+
+        $("#spot_count").val(data.SpotCount);
+        $("#job_count").val(data.JobCount);
+        $("#error").val(data.ErrorCode);
+        $("#error_desc").val(error_desc);
+    }
+
+    function showLoader() {
+        $("#overlay").fadeIn(300);
+    }
+    function hideLoader() {
+        $("#overlay").fadeOut(300);
+    }
+
+    function viewErrorCodes() {
+        showLoader();
+
+        let url = "http://localhost:3001/api/getTodayError/" + localStorage.getItem('timer_id');
+
+        doAjaxGetWithoutParam(url,
+            function (result) {
+                hideLoader();
+
+                if (result.success) {
+                    let errorData = result.data;
+
+                    let errorCodes = Object.keys(errorData);
+
+                    $("#divListErrors").html('');
+
+                    let html = '';
+                    for (let i = 0; i < errorCodes.length; i++) {
+                        let errorCode = errorCodes[i];
+                        let desc = errorData[errorCode];
+
+                        let div = `<div onclick="gotoError('${errorCode}');" class="row justify-content-center align-items-center" style="cursor: pointer">
+                        <div class="col-1">
+                                    <span class="btn btn-success rounded-0 error-box-btn">
+                                    </span>
+                        </div>
+                        <div class="col-2"> ${errorCode} </div>
+                        <div class="col-8 text-start">
+                            <h6 class="m-0 p-2">${desc}</h6>
+                        </div>
+                    </div>`;
+
+                        html += div;
+                    }
+
+                    $("#divListErrors").html(html);
+
+                    $("#errorList").modal('show');
+                }
+                else {
+                    swal(result.message);
+                }
+            },
+            function (error) {
+                swal("Error while fetching error data " + JSON.stringify(error));
+            });
+    }
+
+    function gotoError(errorCode) {
+        localStorage.setItem('errorCode', errorCode);
+        window.location.href = 'errorDesc.html';
+    }
+
+    function handleUser() {
+        let role = localStorage.getItem("userRole");
+        if (role && role.length > 0) {
+            let roleObj = JSON.parse(role);
+
+            if (roleObj.role == "Operator") {
+                window.location.href = "dashboard.html";
+                return;
+            }
+
+            let pages = roleObj.pages;
+
+            //if pages array has no elements that means the current user has access to all the pages
+            if (pages && pages.length > 0) {
+                $("#header_link_log").hide();
+                $("#header_link_diag").hide();
+                $("#header_link_user").hide();
+                $("#header_link_setting").hide();
+                $("#header_link_logchanges").hide();
+                $("#header_link_user").hide();
+
+                //$("#btnBackUp").hide();
+                //$("#btnCopyProgram").hide();
+                //$("#btnImportProgram").hide();
+
+                $("#btnSeqPV").hide();
+                $("#btnGlobal").hide();
+
+                for (let i = 0; i < pages.length; i++) {
+                    let page = pages[i];
+
+                    switch (page) {
+                        case "global.html":
+                            {
+                                $("#btnGlobal").show();
+                            }
+                            break;
+
+                        case "logdata.html":
+                            {
+                                $("#header_link_log").show();
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+        else {
+            //no role value exist, need to login
+
+            window.location.href = "index.html";
+        }
+    }
+
+    function doLogout() {
+        localStorage.removeItem("userRole");
+        window.location.href = "index.html";
+    }
+
+    function isFormValid() {
+        let modeSelectionCurrent = $("#mode_of_selection_of_current").val();
+
+        let maxWeldTime = parseInt(timerDetails.timer_setting.io_parameter_setting.max_weld_limit);
+        if (isNaN(maxWeldTime)) {
+            swal("Please set up max weld time in settings");
+            return false;
+        }
+
+        let maxCurrent = parseInt(timerDetails.timer_setting.io_parameter_setting.max_current_limit);
+        if (isNaN(maxCurrent)) {
+            swal("Please set up max current in settings");
+            return false;
+        }
+
+        /*   let pgName = $("#program_name").val();
+            if(pgName == "") {
+                swal("Please enter Program Name");
+                return false;
+            }*/
+
+        let gunNo = $("#gun_no").val();
+        if (gunNo == "" || isNaN(parseInt(gunNo)) || (gunNo.indexOf(".") > -1)) {
+            swal("Please enter valid Gun No");
+            return false;
+        }
+        else {
+            let gunNoInt = parseInt(gunNo);
+            if (gunNoInt < 0 || gunNoInt > 9999) {
+                swal("Gun No should be between 1 to 9999");
+                return false;
+            }
+        }
+
+        let current_ka = $("#current").val();
+        if (current_ka == "" || isNaN(parseInt(current_ka))) {
+            swal("Please enter valid Current KA");
+            return false;
+        }
+
+
+        let weld_time = $("#weldTime").val();
+        if (weld_time == "" || isNaN(parseInt(weld_time))) {
+            swal("Please enter valid Weld Time in Reference Parameters");
+            return false;
+        }
+
+        let force_kgn = $("#force").val();
+        if (force_kgn == "" || isNaN(parseInt(force_kgn))) {
+            swal("Please enter valid Force kgf in Reference Parameters");
+            return false;
+        }
+
+
+        if (!$("#pre_squeeze_t").prop("disabled")) {
+            let pre_squeeze_t = $("#pre_squeeze_t").val();
+            if (pre_squeeze_t === "" || isNaN(parseInt(pre_squeeze_t)) || pre_squeeze_t.indexOf(".") > -1) {
+                swal("Please enter a valid Pre Squeeze t(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                let pre_squeeze_t_int = parseInt(pre_squeeze_t);
+                if (pre_squeeze_t_int < 0 || pre_squeeze_t_int > 99) {
+                    swal("Pre Squeeze t(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        if (!$("#squeeze_t").prop("disabled")) {
+            let squeeze_t = $("#squeeze_t").val();
+            if (squeeze_t === "" || isNaN(parseInt(squeeze_t)) || squeeze_t.indexOf(".") > -1) {
+                swal("Please enter a valid Squeeze t(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                let squeeze_t_int = parseInt(squeeze_t);
+                if (squeeze_t_int < 0 || squeeze_t_int > 99) {
+                    swal("Squeeze t(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        if (!$("#up_slope_t").prop("disabled")) {
+            let up_slope_t = $("#up_slope_t").val();
+            if (up_slope_t === "" || isNaN(parseInt(up_slope_t)) || up_slope_t.indexOf(".") > -1) {
+                swal("Please enter a valid Up slope t(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                let up_slope_t_int = parseInt(up_slope_t);
+                if (up_slope_t_int < 0 || up_slope_t_int > 99) {
+                    swal("Up slope t(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        if (!$("#blanking_cycle_t").prop("disabled")) {
+            let blanking_cycle_t = $("#blanking_cycle_t").val();
+            if (blanking_cycle_t === "" || isNaN(parseInt(blanking_cycle_t)) || blanking_cycle_t.indexOf(".") > -1) {
+                swal("Please enter a valid Blanking cycle t(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                let blanking_cycle_t_int = parseInt(blanking_cycle_t);
+                if (blanking_cycle_t_int < 0 || blanking_cycle_t_int > 99) {
+                    swal("Blanking cycle t(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        if (!$("#weld_t").prop("disabled")) {
+            let weld_t = $("#weld_t").val();
+            if (weld_t === "" || isNaN(parseInt(weld_t))) {
+                swal("Please enter a valid Weld t(cly) value");
+                return false;
+            }
+            else if ((parseInt(weld_t) > maxWeldTime)) {
+                swal("Weld time cannot greater than MAX weld time (" + maxWeldTime + ")");
+                return false;
+            }
+
+        }
+
+        if (!$("#weld_l").prop("disabled")) {
+            let weld_t = $("#weld_l").val();
+            if (weld_t === "" || isNaN(parseInt(weld_t)) || weld_t.indexOf(".") > -1) {
+
+                let label = (modeSelectionCurrent == "1") ? "Weld I(KA)" : "Heat %";
+                swal("Please enter a valid " + label + " value");
+                return false;
+            }
+            else if ((modeSelectionCurrent == "1") && (parseInt(weld_t) > maxCurrent)) {
+                swal("Weld I(KA) cannot greater than MAX Current (" + maxCurrent + ")");
+                return false;
+            }
+            else {
+                let weld_t_int = parseInt(weld_t);
+                if (weld_t_int < 0 || weld_t_int > 99) {
+                    swal("Weld I(Heat%) should be between 1% to 99%");
+                    return false;
+                }
+            }
+
+        }
+
+        if (!$("#weld_ef").prop("disabled")) {
+            let weld_ef = $("#weld_ef").val();
+            if (weld_ef === "" || isNaN(parseInt(weld_ef))) {
+                swal("Please enter a valid Weld EF(kgf) value");
+                return false;
+            }
+        }
+
+        if (!$("#cool_l_t").prop("disabled")) {
+            let cool_l_t = $("#cool_l_t").val();
+            if (cool_l_t === "" || isNaN(parseInt(cool_l_t)) || cool_l_t.indexOf(".") > -1) {
+                swal("Please enter a valid Cool-1 T(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                let cool_l_t_int = parseInt(cool_l_t);
+                if (cool_l_t_int < 0 || cool_l_t_int > 99) {
+                    swal("Cool-1 T(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        if (!$("#weld_2_t").prop("disabled")) {
+            let weld_2_t = $("#weld_2_t").val();
+            if (weld_2_t === "" || isNaN(parseInt(weld_2_t))) {
+                swal("Please enter a valid Weld-2 t(cly) value");
+                return false;
+            }
+            else if ((parseInt(weld_2_t) > maxWeldTime)) {
+                swal("Weld-2 time cannot greater than MAX weld time (" + maxWeldTime + ")");
+                return false;
+            }
+        }
+
+        if (!$("#weld_2_ef").prop("disabled")) {
+            let weld_2_ef = $("#weld_2_ef").val();
+            if (weld_2_ef === "" || isNaN(parseInt(weld_2_ef))) {
+                swal("Please enter a valid Weld-2 EF(kgf) value");
+                return false;
+            }
+        }
+
+        if (!$("#weld_2_l").prop("disabled")) {
+            let weld_t = $("#weld_2_l").val();
+            if (weld_t === "" || isNaN(parseInt(weld_t)) || $("#weld_2_l").val().indexOf(".") > -1) {
+                let label = (modeSelectionCurrent == "1") ? "Weld-2 I(KA)" : "Weld-2 Heat %";
+                swal("Please enter a valid " + label + " value");
+                return false;
+            }
+            else if ((modeSelectionCurrent == "1") && (parseInt(weld_t) > maxCurrent)) {
+                swal("Weld-2 I(KA) cannot greater than MAX Current (" + maxCurrent + ")");
+                return false;
+            }
+            else {
+                let weld_t_int = parseInt(weld_t);
+                if (weld_t_int < 0 || weld_t_int > 99) {
+                    swal("Weld-2 I(Heat%) should be between 1% to 99%");
+                    return false;
+                }
+            }
+
+        }
+
+        if (!$("#cool_2_t").prop("disabled")) {
+            let cool_2_t = $("#cool_2_t").val();
+            if (cool_2_t === "" || isNaN(parseInt(cool_2_t)) || $("#cool_2_t").val().indexOf(".") > -1) {
+                swal("Please enter a valid Cool-2 T(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                let cool_2_t_int = parseInt(cool_2_t);
+                if (cool_2_t_int < 0 || cool_2_t_int > 99) {
+                    swal("Cool-2 T(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        if (!$("#weld_3_t").prop("disabled")) {
+            let weld_3_t = $("#weld_3_t").val();
+            if (weld_3_t === "" || isNaN(parseInt(weld_3_t))) {
+                swal("Please enter a valid Weld-3 t(cly) value");
+                return false;
+            }
+            else if ((parseInt(weld_3_t) > maxWeldTime)) {
+                swal("Weld-3 time cannot greater than MAX weld time (" + maxWeldTime + ")");
+                return false;
+            }
+        }
+
+        if (!$("#weld_3_ef").prop("disabled")) {
+            let weld_3_ef = $("#weld_3_ef").val();
+            if (weld_3_ef === "" || isNaN(parseInt(weld_3_ef))) {
+                swal("Please enter a valid Weld-3 EF(kgf) value");
+                return false;
+            }
+        }
+
+        if (!$("#weld_3_l").prop("disabled")) {
+            let weld_t = $("#weld_3_l").val();
+            if (weld_t === "" || isNaN(parseInt(weld_t)) || $("#weld_3_l").val().indexOf(".") > -1) {
+                let label = (modeSelectionCurrent == "1") ? "Weld-3 I(KA)" : "Weld-3 Heat %";
+                swal("Please enter a valid " + label + " value");
+
+                return false;
+            }
+            else if ((modeSelectionCurrent == "1") && (parseInt(weld_t) > maxCurrent)) {
+                swal("Weld-3 I(KA) cannot greater than MAX Current (" + maxCurrent + ")");
+                return false;
+            }
+            else {
+                let weld_t_int = parseInt(weld_t);
+                if (weld_t_int < 0 || weld_t_int > 99) {
+                    swal("Weld-3 I(Heat%) should be between 1% to 99%");
+                    return false;
+                }
+            }
+
+        }
+
+        if (!$("#down_slope_t").prop("disabled")) {
+            let down_slope_t = $("#down_slope_t").val();
+            if (down_slope_t === "" || isNaN(parseInt(down_slope_t)) || $("#down_slope_t").val().indexOf(" ") > -1) {
+                swal("Please enter a valid Down Slope T(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                let down_slope_t_int = parseInt(down_slope_t);
+                if (down_slope_t_int < 0 || down_slope_t_int > 99) {
+                    swal("Down Slope T(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        if (!$("#down_slope_hold_t").prop("disabled")) {
+            let down_slope_hold_t = $("#down_slope_hold_t").val();
+            if (down_slope_hold_t === "" || isNaN(parseInt(down_slope_hold_t)) || down_slope_hold_t.indexOf(".") > -1) {
+                swal("Please enter a valid Down Slope Hold T(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                let down_slope_hold_t_int = parseInt(down_slope_hold_t);
+                if (down_slope_hold_t_int < 0 || down_slope_hold_t_int > 99) {
+                    swal("Down Slope Hold T(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        if (!$("#off_time_t").prop("disabled")) {
+            let off_time_t = $("#off_time_t").val();
+            if (off_time_t === "" || isNaN(parseInt(off_time_t)) || off_time_t.indexOf(".") > -1) {
+                swal("Please enter a valid Off time T(cly) value");
+                return false;
+            }
+            else {
+                //range 0 to 99
+                if (parseInt(off_time_t) < 0 || parseInt(off_time_t) > 99) {
+                    swal("Off time T(cly) should be between 0 to 99");
+                    return false;
+                }
+            }
+        }
+
+        return true;
+
+    }
+
+    function fetchProgramCountForSyncFromTimer() {
+
+        let apiData = {
+            testIpAddress: timerDetails.timer_setting.ethernet.ip_address,
+            testPort: parseInt(timerDetails.timer_setting.ethernet.port),
+            timerID: 1,
+            registerStartAddress: 75,
+            numRegisters: 1
+        };
+
+        $.ajax({
+            url: "http://localhost:3002/readValues",
+            contentType: "application/json",
+            dataType: 'json',
+            type: "POST",
+            data: JSON.stringify(apiData),
+            success: function (result) {
+                console.log("fetchProgramCountForSyncFromTimer", result);
+
+                if (result.success) {
+                    let valueArr = result.data;
+
+                    valueArr[0] = 14;
+                    //updateView(timerDataObj, valueArr);
+                    if (valueArr.length >= 1) {
+                        let countPrograms = valueArr[0];
+
+                        let htmlAppend = `<option>--Select--</option>`
+
+                        for (let i = 1; i <= countPrograms; i++) {
+                            htmlAppend += `<option value="${i}">${i}</option>`
+                        }
+
+                        $('#program_no').append(htmlAppend)
+
+                    }
+                    else {
+                        swal("For Sync from timer - could not fetch programs count from timer");
+                    }
+                }
+                else {
+                    swal("Count not fetch programs count from timer" + JSON.stringify(result));
+                }
+            }
+        });
+    }
+
+    function handleProgramChangedSyncFromTimer(programNo) {
+        let modbusData = {};
+        modbusData.testIpAddress = timerDetails.timer_setting.ethernet.ip_address;
+        modbusData.testPort = timerDetails.timer_setting.ethernet.port;
+        modbusData.registerStartAddress = 76;
+        modbusData.resPos = ["'" + programNo + "'"];
+        modbusData.timerID = 1;
+
+        modbusWriteMultipleValues(modbusData, function (result) {
+            if (result.success) {
+                doSyncFromTimer();
+            }
+            else {
+                swal("Error while updating program-no register for sync from timer, error = " + JSON.stringify(result));
+            }
+        },
+            function (error) {
+                console.log(error);
+                swal("Error while updating program-no register for sync from timer. Please try again");
+            });
+    }
+
+    function doSyncFromTimer() {
+        let apiData = {
+            testIpAddress: timerDetails.timer_setting.ethernet.ip_address,
+            testPort: parseInt(timerDetails.timer_setting.ethernet.port),
+            timerID: 1,
+            registerStartAddress: 0,
+            numRegisters: 32
+        };
+
+        modbusReadValues(apiData, function (result) {
+            console.log("Api data result", result);
+
+            if (result.success) {
+                let valueArr = result.data;
+
+                if (valueArr.length >= 31) {
+                    updateValuesForSyncFromTimer(valueArr);
+                }
+            }
+        },
+            function (error) {
+                console.log(error);
+            });
+    }
+
+    function updateValuesForSyncFromTimer(valueArr) {
+        let sheetTypeModbusVal = 1; // valueArr[0];
+        let sheetThicknessModbusVal = 11; // valueArr[1];
+        //let weldingClassModbusVal = valueArr[2];
+        //let sheetTypeModbusVal = valueArr[0];
+        //let sheetThicknessModbusVal = valueArr[1];
+
+        let data = {
+            sheetType: sheetTypeModbusVal,
+            sheetThickness: sheetThicknessModbusVal
+        }
+
+        $.ajax({
+            url: "http://localhost:3001/api/getSheetDetailsFromModbusValues",
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (result) {
+                if (result.success) {
+                    $('#sheetType').val(result.data.sheetTypeID);
+                    getSheetThicknessBasedOnModbusVal(result.data.sheetTypeID, sheetThicknessModbusVal);
+                }
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        })
+
+        $("#gun_no").val(valueArr[4]);
+
+        $("#weld").prop('checked', valueArr[5])
+        $("#re_weld_schedule").prop('checked', valueArr[6])
+
+        $("#schedule").val(valueArr[7]);
+
+        $("#reweld_factor").val(valueArr[8]);
+
+        $("#impulse").val(valueArr[9]);
+
+        $("#monitoring").val(valueArr[10]).change();
+
+
+        $("#base_selection_value").val((valueArr[11] + "." + valueArr[12]));
+
+        $("#mode_of_selection_of_current").val(valueArr[13]).change();
+
+        $("#pre_squeeze_t").val(valueArr[14]);
+        $("#squeeze_t").val(valueArr[15]);
+        $("#up_slope_t").val(valueArr[16]);
+        $("#blanking_cycle_t").val(valueArr[17]);
+
+
+        $("#weld_t").val(valueArr[18]);
+        $("#weld_ef").val(valueArr[19]);
+        $("#weld_l").val(valueArr[20] / 10);
+        $("#cool_l_t").val(valueArr[21]);
+
+
+        $("#weld_2_t").val(valueArr[22]);
+        $("#weld_2_ef").val(valueArr[23]);
+        $("#weld_2_l").val(valueArr[24] / 10);
+        $("#cool_2_t").val(valueArr[25]);
+
+
+        $("#weld_3_t").val(valueArr[26]);
+        $("#weld_3_ef").val(valueArr[27]);
+        $("#weld_3_l").val(valueArr[28] / 10);
+        $("#down_slope_t").val(valueArr[29]);
+        $("#down_slope_hold_t").val(valueArr[30]);
+        $("#off_time_t").val(valueArr[31]);
+    }
+
+    function onReweldCheckBoxChanged() {
+        if ($("#re_weld_schedule").is(":checked")) {
+            $("#reweld_factor").prop('disabled', false);
+        }
+        else {
+            $("#reweld_factor").prop('disabled', true);
+            $("#reweld_factor").val(1).change();
+        }
+    }
+
+    function checkPreSqueeze() {
+        let preseqSetting = timerDetails.timer_setting.io_parameter_setting.pre_squeeze;
+
+        if (preseqSetting) {
+            $("#pre_squeeze_t").attr('disabled', false);
+        }
+        else {
+            $("#pre_squeeze_t").attr('disabled', true);
+            $("#pre_squeeze_t").val('0');
+        }
+    }
+
+
+</script>
+
+</html>
