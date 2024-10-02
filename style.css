@@ -6,6 +6,7 @@
 
 body {
   overflow: scroll;
+  background-color: #80808029;
 }
 
 .main {
@@ -13,14 +14,14 @@ body {
 }
 
 .main-title {
-  position: absolute;
-  top: -10px;
-  z-index: 1;
-  left: 5px;
-  background-color: white;
-  color: #0073BD;
-  padding: 0 5px;
-  width: max-content;
+  /* position: absolute; */
+  /* top: -10px; */
+  /* z-index: 1; */
+  /* left: 5px; */
+  /* background-color: white; */
+  color: #000000;
+  margin-bottom: 10px;
+  /* width: max-content; */
 }
 .main-title-cool {
   position: absolute;
@@ -34,7 +35,7 @@ body {
 }
 
 .main-border {
-  border: 2px solid #0073BD !important;
+  /* border: 1px solid #3c3d3d !important; */
   /* border-radius: 8px; */
 }
 .padding-top{
