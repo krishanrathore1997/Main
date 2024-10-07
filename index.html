@@ -28,7 +28,7 @@
             margin: 4px auto;
             list-style: none;
             width: 100%;
-            background: #3c3d3d;
+            background: #6c757d;
             max-width: 100%;
         }
 
@@ -75,135 +75,320 @@
                 <li><a href="diagnosis.html" id="header_link_diag">Diagnosis</a></li>
                 <li><a href="user.html" id="header_link_user"> User Administration</a></li>
                 <li><a href="settings.html" id="header_link_setting"> Settings</a></li>
-                <li><a href="info.html"> Help  </a></li>
+                <li><a href="info.html"> Help </a></li>
             </ul>
         </div>
-    </s>
-    <section>
-        <div class="container-fluid">
-            <div class="row g-3">
-                <div class="col-lg-9">
-                    <div class="p-4 main border main-border shadow">
-                        <label for="first" class="main-title fs-5 fw-bold">Program Selection</label>
-                        <div class="row program-section g-3">
-                            <div class="col-lg-2 col-md-4">
-                                <label class="form-label bold-label">Program No</label>
-                                <div class="">
-                                    <select name="program_no" class="form-select" aria-label="Default select example">
-                                        <option value="1" selected>1
-                                        </option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
+        </s>
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="card bg-transparent shadow">
+                            <div class="card-header text-center bg-secondary border-secondary">
+                                <label for="first" class="main-title fs-5 fw-bold mb-0 text-white">Program
+                                    Selection</label>
                             </div>
-                            <div class="col-lg-2 col-md-4">
-                                <label class="form-label bold-label">Program Name</label>
-                                <div class="">
-                                    <input type="text" class="form-control bg-gray" name="program_name"
-                                        placeholder="11 AUG TRIAL">
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4">
-                                <label class="form-label bold-label">Gun No</label>
-                                <div class="">
-                                    <input type="number" class="form-control" name="gun_no" placeholder="0">
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4">
+                            <div class="card-body">
+                                <div class="row program-section g-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label bold-label">Program No</label>
+                                        <div class="">
+                                            <select name="program_no" class="form-select"
+                                                aria-label="Default select example">
+                                                <option value="1" selected>1
+                                                </option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label bold-label">Program Name</label>
+                                        <div class="">
+                                            <input type="text" class="form-control " name="program_name"
+                                                placeholder="11 AUG TRIAL">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label bold-label">Gun No</label>
+                                        <div class="">
+                                            <input type="number" class="form-control" name="gun_no" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="weld" type="checkbox" value=""
+                                                id="weld">
+                                            <label class="form-check-label fw-bold" for="weld">
+                                                Weld
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
 
-                                <label class="form-label bold-label">Schedule</label>
-                                <div class="">
-                                    <select name="schedule" class="form-select bg-gray"
-                                        aria-label="Default select example">
-                                        <option value="1" selected>Single
-                                        </option>
-                                        <option value="2">2</option>
-                                    </select>
-                                </div>
-                            </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="reweld" type="checkbox" value=""
+                                                id="reweld">
+                                            <label class="form-check-label fw-bold" for="reweld">
+                                                Re-weld Schedule
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <!-- <div class="form-check">
+                                            <input class="form-check-input" name="time_monitoring" type="checkbox"
+                                                value="" id="time_monitoring">
+                                            <label class="form-check-label fw-bold" for="time_monitoring">
+                                                Time monitoring
+                                            </label>
+                                        </div> -->
+                                    </div>
 
-                            <div class="col-lg-2 col-md-4">
-                                <label class="form-label bold-label">Monitoring</label>
-                                <div class="">
-                                    <select name="monitoring" class="form-select bg-gray"
-                                        aria-label="Default select example">
-                                        <option value="1" selected>1Standard
-                                        </option>
-                                        <option value="2">2</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4">
-                                <label class="form-label bold-label">Re-weld Factor</label>
-                                <div class="">
-                                    <select name="re_weld_factor" class="form-select bg-gray        "
-                                        aria-label="Default select example">
-                                        <option value="1" selected>0
-                                        </option>
-                                        <option value="2">1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" name="weld" type="checkbox" value="" id="weld">
-                                    <label class="form-check-label fw-bold" for="weld">
-                                        Weld
-                                    </label>
-                                </div>
-                          
-                                <div class="form-check">
-                                    <input class="form-check-input" name="reweld" type="checkbox" value="" id="reweld">
-                                    <label class="form-check-label fw-bold" for="reweld">
-                                        Re-weld Schedule
-                                    </label>
-                                </div>
-                           
-                                <div class="form-check">
-                                    <input class="form-check-input" name="time_monitoring" type="checkbox" value=""
-                                        id="time_monitoring">
-                                    <label class="form-check-label fw-bold" for="time_monitoring">
-                                        Time monitoring
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4">
-                                <label class="form-label bold-label">Base Selection value <br> (Proportional
-                                    value)</label>
-                                <div class="">
-                                    <select name="program_no" class="form-select" aria-label="Default select example">
-                                        <option value="1" selected>0
-                                        </option>
-                                        <option value="2">2</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4">
-                                <label class="form-label bold-label">Impulse</label>
-                                <div class="">
-                                    <select name="impulse" class="form-select bg-gray"
-                                        aria-label="Default select example">
-                                        <option value="1" selected>1
-                                        </option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4">
-                                <label class="form-label bold-label">Mode of selection of Current</label>
-                                <div class="">
-                                    <select name="mode_current" class="form-select bg-gray"
-                                        aria-label="Default select example">
-                                        <option value="1" selected>KSR
-                                        </option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
+                                    <div class="col-md-4">
+
+                                        <label class="form-label bold-label">Schedule</label>
+                                        <div class="">
+                                            <select name="schedule" class="form-select "
+                                                aria-label="Default select example">
+                                                <option value="1" selected>Single
+                                                </option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="col-md-4">
+                                        <label class="form-label bold-label">Re-weld Factor</label>
+                                        <div class="">
+                                            <select name="re_weld_factor" class="form-select         "
+                                                aria-label="Default select example">
+                                                <option value="1" selected>0
+                                                </option>
+                                                <option value="2">1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label bold-label">Monitoring</label>
+                                        <div class="">
+                                            <select name="monitoring" class="form-select "
+                                                aria-label="Default select example">
+                                                <option value="1" selected>1Standard
+                                                </option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label bold-label">Impulse</label>
+                                        <div class="">
+                                            <select name="impulse" class="form-select "
+                                                aria-label="Default select example">
+                                                <option value="1" selected>1
+                                                </option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <label class="form-label bold-label">Base PV value </label>
+                                        <div class="">
+                                            <select name="program_no" class="form-select"
+                                                aria-label="Default select example">
+                                                <option value="1" selected>0
+                                                </option>
+                                                <option value="2">2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-md-4">
+                                        <label class="form-label bold-label"> Weld Mode</label>
+                                        <div class="">
+                                            <select name="mode_current" class="form-select "
+                                                aria-label="Default select example">
+                                                <option value="1" selected>KSR
+                                                </option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="mt-3">
+                            <div class="card shadow bg-transparent">
+                                <div class="card-header bg-secondary text-center">
+                                    <label for="first"
+                                        class="main-title fs-6 bold-label text-white m-0 text-center">Program
+                                        Parameters</label>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="">
+                                                <label class="form-label main-title fs-6 bold-label">Pre squeeze</label>
+                                                <div class="d-flex  align-items-center mb-2">
+                                                    <input type="text" class="form-control width-per-90 bold-label"
+                                                        name="pre_squeeze" min="0" max="99" id="pre_squeeze_t">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="">
+                                                <label for=""
+                                                    class="form-label main-title fs-6 bold-label">Squeeze</label>
+
+                                                <input type="text" class="form-control width-per-90 bold-label"
+                                                    name="squeeze" min="0" max="99" id="squeeze_t">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="">
+                                                <label for="up_slope_t" class="form-label main-title fs-6 bold-label">Up
+                                                    slope</label>
+
+                                                <input type="text" class="form-control width-per-90 bold-label"
+                                                    name="up_slope" min="0" max="99" id="up_slope_t">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="my-4 border-1 border-secondary border"></div>
+                                    <div class="row g-3">
+                                        <div class="col-lg-4 col-3">
+                                            <div class="border border-1 border-secondary p-2 h-100">
+                                                <label for="first"
+                                                    class="form-label main-title fs-6 bold-label">Weld-1</label>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_t"
+                                                        class="width-per-30 fs-7 medium-label">T(cly):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_t" type="text" id="weld_2_t">
+                                                </div>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_ef"
+                                                        class="width-per-30 medium-label fs-7">EF(kgf):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_ef" type="text" id="weld_2_ef"
+                                                        onchange="onWeld2ForceChange(this.value);">
+                                                </div>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_l" id="weld_2_heat_label"
+                                                        class="width-per-30 medium-label fs-7">l(KA):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_l" type="text" id="weld_2_l">
+                                                </div>
+
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="cool_l_t" class="width-per-30 fs-7 medium-label">Cool
+                                                        1</label>
+                                                    <input class="ms-2 form-control width-per-90 medium-label \" min="0"
+                                                        name="cool-1" type="text" max="99" id="cool_l_t" disabled="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-3">
+                                            <div class="border border-1 border-secondary p-2 h-100">
+                                                <label for="first"
+                                                    class="form-label main-title fs-6 bold-label">Weld-2</label>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_t"
+                                                        class="width-per-30 fs-7 medium-label">T(cly):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_t" type="text" id="weld_2_t">
+                                                </div>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_ef"
+                                                        class="width-per-30 medium-label fs-7">EF(kgf):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_ef" type="text" id="weld_2_ef"
+                                                        onchange="onWeld2ForceChange(this.value);">
+                                                </div>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_l" id="weld_2_heat_label"
+                                                        class="width-per-30 medium-label fs-7">l(KA):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_l" type="text" id="weld_2_l">
+                                                </div>
+
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="cool_l_t" class="width-per-30 fs-7 medium-label">Cool
+                                                        2</label>
+                                                    <input class="ms-2 form-control width-per-90 medium-label \" min="0"
+                                                        name="cool-1" type="text" max="99" id="cool_l_t" disabled="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-3">
+                                            <div class="border border-1 border-secondary p-2 h-100">
+                                                <label for="first"
+                                                    class="form-label main-title fs-6 bold-label">Weld-3</label>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_t"
+                                                        class="width-per-30 fs-7 medium-label">T(cly):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_t" type="text" id="weld_2_t">
+                                                </div>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_ef"
+                                                        class="width-per-30 medium-label fs-7">EF(kgf):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_ef" type="text" id="weld_2_ef"
+                                                        onchange="onWeld2ForceChange(this.value);">
+                                                </div>
+                                                <div class="d-flex justify-content-end align-items-center mb-2">
+                                                    <label for="weld_2_l" id="weld_2_heat_label"
+                                                        class="width-per-30 medium-label fs-7">l(KA):</label>
+                                                    <input class="ms-2 form-control width-per-90 weld2 medium-label"
+                                                        name="weld-2_l" type="text" id="weld_2_l">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="my-4 border-1 border-secondary border"></div>
+                                    <div class="row mb-3">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="">
+                                                <label for="first" class="form-label main-title fs-6 bold-label">Down
+                                                    slope</label>
+
+                                                <input type="text" class="form-control width-per-90bold-label"
+                                                    name="down_slope" id="down_slope_t">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="">
+                                                <label for="first"
+                                                    class="form-label main-title fs-6 bold-label">Hold</label>
+
+                                                <input type="text" class="form-control width-per-90bold-label"
+                                                    name="down_slope_hold_t" id="down_slope_hold_t">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class=" off-time">
+                                                <label for="first" class="form-label main-title fs-6 bold-label">Off
+                                                    time</label>
+                                                <input type="text" class="form-control width-per-90bold-label"
+                                                    name="off_time_t" id="off_time_t">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                         <!-- <div class="row">
                             <div class="col-lg-3">
                                 <label class="form-label bold-label">Program No</label>
@@ -226,7 +411,7 @@
                                 <div class="my-3">
                                     <label class="form-label bold-label">Schedule</label>
                                     <div class="">
-                                        <select name="schedule" class="form-select bg-gray"
+                                        <select name="schedule" class="form-select "
                                             aria-label="Default select example">
                                             <option value="1" selected>Single
                                             </option>
@@ -237,7 +422,7 @@
                                 <div class="my-3 pt-4">
                                     <label class="form-label bold-label">Monitoring</label>
                                     <div class="">
-                                        <select name="monitoring" class="form-select bg-gray"
+                                        <select name="monitoring" class="form-select "
                                             aria-label="Default select example">
                                             <option value="1" selected>1Standard
                                             </option>
@@ -249,7 +434,7 @@
                             <div class="col-lg-3">
                                 <label class="form-label bold-label">Program Name</label>
                                 <div class="">
-                                    <input type="text" class="form-control bg-gray" name="program_name"
+                                    <input type="text" class="form-control " name="program_name"
                                         placeholder="11 AUG TRIAL">
                                 </div>
                                 <div class="my-3">
@@ -264,7 +449,7 @@
                                 <div class="my-3">
                                     <label class="form-label bold-label">Re-weld Factor</label>
                                     <div class="">
-                                        <select name="re_weld_factor" class="form-select bg-gray        "
+                                        <select name="re_weld_factor" class="form-select         "
                                             aria-label="Default select example">
                                             <option value="1" selected>0
                                             </option>
@@ -303,7 +488,7 @@
                                 <div class="my-3">
                                     <label class="form-label bold-label">Impulse</label>
                                     <div class="">
-                                        <select name="impulse" class="form-select bg-gray"
+                                        <select name="impulse" class="form-select "
                                             aria-label="Default select example">
                                             <option value="1" selected>1
                                             </option>
@@ -315,7 +500,7 @@
                                 <div class="my-3">
                                     <label class="form-label bold-label">Mode of selection of Current</label>
                                     <div class="">
-                                        <select name="mode_current" class="form-select bg-gray"
+                                        <select name="mode_current" class="form-select "
                                             aria-label="Default select example">
                                             <option value="1" selected>KSR
                                             </option>
@@ -329,622 +514,514 @@
                             </div>
                         </div> -->
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="shadow main border main-border" style="height: 100%;">
-                        <!-- <label for="first" class="main-title fs-5">Program Selection</label> -->
-                        <button type="button" class="btn btn-primary btn-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Reference Parameters
-                          </button>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="main main-border p-3 shadow">
-                        <label for="first" class="main-title fs-5 bold-label fw-bold"> Program Parameters</label>
+                    <div class="col-md-6">
                         <div class="row g-3">
-                            <div class="col-lg col-md-6">
-                                <div class="mb-3 pt-3 px-2 main secondary-border">
-                                    <label class="form-label main-title fs-6 bold-label">Pre squeeze</label>
-                                    <div class="d-flex  align-items-center mb-2">
-                                        <label for="pre_squeeze_t"
-                                            class="width-per-30 fs-7 bold-label">T(cly):</label>
-                                        <input type="text" class="ms-2 form-control width-per-70 bold-label"
-                                            name="pre_squeeze" min="0" max="99" id="pre_squeeze_t">
+                            <div class="col-md-4">
+                                <div class="shadow main border main-border card bg-transparent" style="height: 100%;">
+                                    <div class="card-header bg-secondary text-center">
+                                        <label for="first"
+                                            class="main-title fs-6 bold-label text-white m-0 text-center">
+                                            Reference Parameters</label>
+                                    </div>
+                                    <div class="d-flex h-100 justify-content-center align-items-center">
+                                        <a class=""
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <img height="80" src="./add.png" alt="">
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-transparent shadow">
+                                    <div class="card-header bg-secondary text-center">
+                                        <label for="first"
+                                            class="main-title fs-6 bold-label text-white m-0 text-center">Timer
+                                            Details</label>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <div class="circle-container">
+                                                <div class="outer-circle">
+                                                    <div id="section_4" class="inner-circle"
+                                                        style="background-color: white;">
+                                                    </div>
+                                                    <div id="section_1" class="quarter quarter-1"
+                                                        style="background-color: #6c757d;"></div>
+                                                    <div id="section_5" class="quarter quarter-2"
+                                                        style="background-color: white;"></div>
+                                                    <div id="section_2" class="quarter quarter-3"
+                                                        style="background-color: white;"></div>
+                                                    <div id="section_3" class="quarter quarter-4"
+                                                        style="background-color: #6c757d;"></div>
+                                                    <div class="line horizontal-line"></div>
+                                                    <!-- <div class="handle"></div>
+                                                    <div class="handle-horizontal"></div> -->
+                                                </div>
+                                            </div>
+                                            <div class="mt-2">
+                                                <span id="time_name">Test3</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg col-md-6">
-                                <div class="mb-2 pt-3 px-2 main secondary-border">
-                                    <label for="" class="form-label main-title fs-6 bold-label">Squeeze</label>
-                                    <div class="d-flex align-items-center mb-2">
-                                        <label for="squeeze_t"
-                                            class="width-per-30 fs-7 bold-label">T(cly):</label>
-                                        <input type="text" class="ms-2 form-control width-per-70 bold-label"
-                                            name="squeeze" min="0" max="99" id="squeeze_t">
+                            <div class="col-md-4">
+                                <div class="card bg-transparent shadow" style="height: 100%;">
+                                    <div class="card-header bg-secondary text-center">
+                                        <label for="first"
+                                            class="main-title fs-6 bold-label text-white m-0 text-center">Program
+                                            Actions</label>
+                                    </div>
+                                    <div class="row justify-content-evenly align-items-center" style="height: inherit;">
+                                        <button type="button" id="saveProgram"
+                                            class="btn bg-secondary fw text-white ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label">Save
+                                            Program
+                                        </button>
+                                        <button type="button" id="sendProgram"
+                                            class="btn bg-secondary fw text-white ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label">Send
+                                            Program
+                                        </button>
+                                        <button type="button" id="sendProgram"
+                                            class="btn bg-secondary fw text-white ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
+                                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                                            aria-controls="offcanvasScrolling">
+                                            More Actions
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg col-md-6">
-                                <div class="mb-3 px-2 pt-3 main secondary-border">
-                                    <label for="up_slope_t" class="form-label main-title fs-6 bold-label">Up
-                                        slope</label>
-                                    <div class="d-flex align-items-center mb-2">
-                                        <label for="" class="width-per-30 fs-7 bold-label">T(cly):</label>
-                                        <input type="text" class="ms-2 form-control width-per-70 bold-label"
-                                            name="up_slope" min="0" max="99" id="up_slope_t">
-                                    </div>
+                            <!-- <div class="col-md-4">
+                                <div class="card shadow bg-transparent">
+                                        <div class="p-2 main">
+                                            <label for="spot_count" class="main-title fs-6 bold-label">Spot Count</label>
+                                            <div class="d-flex">
+                                                <input type="text" name="spots_Count" id="spot_count" class="bg-red"
+                                                    style="font-weight:600; width:-webkit-fill-available;text-align:center;">
+                                            </div>
+                                        </div>
+                                        <div class="p-2 main">
+                                            <label for="job_count" class="main-title fs-6 bold-label">Job Count</label>
+                                            <div class="d-flex">
+                                                <input type="text" name="job_Count" id="job_count" class="bg-red"
+                                                    style="font-weight:600; width:-webkit-fill-available;text-align:center;">
+                                            </div>
+                                        </div>
                                 </div>
-                            </div>
-                            <div class="col-lg col-md-6">
-                                <div class="mb-2 px-2 pt-3 main secondary-border">
-                                    <label for="first" class="form-label main-title fs-6 bold-label">Blanking
-                                        Cycle</label>
-                                    <div class="d-flex align-items-center mb-2">
-                                        <label for="blanking_cycle_t"
-                                            class="width-per-30 fs-7 bold-label">T(cly):</label>
-                                        <input type="text" class="ms-2 form-control width-per-70 bold-label"
-                                            name="blanking_cycle" min="0" max="99" id="blanking_cycle_t">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg col-md-6">
-                                <div class="mb-3 px-2 pt-3 main secondary-border">
-                                    <label for="first" class="form-label main-title fs-6 bold-label">Down
-                                        slope</label>
-                                    <div class="d-flex justify-content-end align-items-center mb-2">
-                                        <label for="down_slope_t"
-                                            class="width-per-30 fs-7 bold-label">T(cly):</label>
-                                        <input type="text" class="ms-2 form-control width-per-60 bold-label"
-                                            name="down_slope" id="down_slope_t">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg col-md-6">
-                                <div class="mb-2 px-2 pt-3 main secondary-border">
+                            </div> -->
+                        </div>
+                        <div class="row mt-3">
+                            <div class="card shadow bg-transparent border ps-lg-0">
+                                <div class="card-header bg-secondary text-center">
                                     <label for="first"
-                                        class="form-label main-title fs-6 bold-label">Hold</label>
-                                    <div class="d-flex justify-content-end align-items-center mb-2">
-                                        <label for="down_slope_hold_t"
-                                            class="width-per-30 fs-7 bold-label">T(cly):</label>
-                                        <input type="text" class="ms-2 form-control width-per-60 bold-label"
-                                            name="down_slope_hold_t" id="down_slope_hold_t">
-                                    </div>
+                                        class="main-title fs-6 bold-label text-white m-0 text-center">Feedback</label>
                                 </div>
-                            </div>
-                            <div class="col-lg col-md-6">
-                                <div class="mb-2 px-2 pt-3 main secondary-border off-time">
-                                    <label for="first" class="form-label main-title fs-6 bold-label">Off
-                                        time</label>
-                                    <div class="d-flex justify-content-end align-items-center mb-2">
-                                        <label for="off_time_t" class="width-per-40 bold-label">T(cly):</label>
-                                        <input type="text" class="ms-2 form-control width-per-60 bold-label"
-                                            name="off_time_t" id="off_time_t">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            </div>
-                            <div class="row">
-                                <div class="col-lg col-3">
-                                        <div class="mb-3 px-2 pt-3 main secondary-border weld1 weld1_custom">
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-lg-6 col-md-4 border border-1 border-secondary">
                                             <label for="first"
-                                                class="form-label main-title-cool bold-label fs-6">Weld-1</label>
-                                                <div class="d-flex align-items-center mb-2">
-                                                <label for="weld_t" class="width-per-30 fs-7 bold-label">T(cly):</label>
-                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
-                                                    name="weld_t" min="0" max="99" id="weld_t">
+                                                class="form-label main-title fs-6 bold-label">Weld-1</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="actual_current" class="bold-label">Actual current:</label>
+                                                <input type="text" class="bg-red ms-2 " name="actual_current"
+                                                    id="actual_current"
+                                                    style="font-weight:600;text-align:center;width:100px">
                                             </div>
-                                            <div class="d-flex align-items-center mb-2">
-                                                <label for="weld_ef"
-                                                    class="width-per-30 fs-7 bold-label">EF(kgf):</label>
-                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
-                                                    name="weld_ef" min="0" max="99" id="weld_ef">
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="actual_weld_time" class="bold-label">Actual weld
+                                                    Cycle:</label>
+                                                <input type="text" class="bg-red ms-2 " name="actual_weld_time"
+                                                    id="actual_weld_time"
+                                                    style="font-weight:600;text-align:center;width:100px">
                                             </div>
-                                            <div class="d-flex align-items-center mb-2">
-                                                <label for="weld_l" id="weld_1_heat_label"
-                                                    class="width-per-30 fs-7 bold-label">l(KA):</label>
-                                                <input type="text" class="ms-2 form-control width-per-70 bold-label"
-                                                    name="weld_ka" min="0" max="99" id="weld_l">
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="power_factor" class="bold-label">Primary Current:</label>
+                                                <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                    id="power_factor"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="power_factor" class="bold-label">Heat %:</label>
+                                                <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                    id="heat_percentage"
+                                                    style="font-weight:600;text-align:center;width:100px">
                                             </div>
                                         </div>
 
-                                </div>
-                                    <div class="col-lg col-3">
-                                        <div class="mb-2 px-2 pt-3 main prog-para-border weld2">
+                                        <div class="col-lg-6 col-md-4 border border-1 border-secondary">
                                             <label for="first"
-                                                class="form-label main-title-cool bold-label fs-6">Cool-1</label>
+                                                class="form-label main-title fs-6 bold-label">Weld-2</label>
                                             <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="cool_l_t"
-                                                    class="width-per-30 fs-7 medium-label">T(cly):</label>
-                                                <input class="ms-2 form-control width-per-70 medium-label \" min="0"
-                                                    name="cool-1" type="text" max="99" id="cool_l_t" disabled="">
+                                                <label for="w2_actual_current" class="bold-label">Actual
+                                                    current:</label>
+                                                <input type="text" class="bg-red ms-2 " name="actual_current"
+                                                    id="w2_actual_current"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="w2_actual_weld_time" class="bold-label">Actual weld
+                                                    Cycle:</label>
+                                                <input type="text" class="bg-red ms-2 " name="actual_weld_time"
+                                                    id="w2_actual_weld_time"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="w2_power_factor" class="bold-label">Primary Current:</label>
+                                                <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                    id="w2_power_factor"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="power_factor" class="bold-label">Heat %:</label>
+                                                <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                    id="w2_heat_percentage"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-4 border border-1 border-secondary">
+                                            <label for="first"
+                                                class="form-label main-title fs-6 bold-label">Weld-3</label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="w3_actual_current" class="bold-label">Actual
+                                                    current:</label>
+                                                <input type="text" class="bg-red ms-2 " name="actual_current"
+                                                    id="w3_actual_current"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="w3_actual_weld_time" class="bold-label">Actual weld
+                                                    Cycle:</label>
+                                                <input type="text" class="bg-red ms-2 " name="actual_weld_time"
+                                                    id="w3_actual_weld_time"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="w3_power_factor" class="bold-label">Primary Current:</label>
+                                                <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                    id="w3_power_factor"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="power_factor" class="bold-label">Heat %:</label>
+                                                <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                    id="w3_heat_percentage"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-4 border border-1 border-secondary">
+                                            <label for="first" class="form-label main-title fs-6 bold-label"></label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label class="bold-label">Date</label>
+                                                <input type="text" class="bg-red ms-2 " name="Date"
+                                                    id="w3_actual_current"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="" class="bold-label">Program No</label>
+                                                <input type="text" class="bg-red ms-2 " name="actual_weld_time" id=""
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="w3_power_factor" class="bold-label">Spot No.</label>
+                                                <input type="text" class="bg-red ms-2 " name="power_factor"
+                                                    id="w3_power_factor"
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="" class="bold-label">Job No.</label>
+                                                <input type="text" class="bg-red ms-2 " name="" id=""
+                                                    style="font-weight:600;text-align:center;width:100px">
+                                            </div>
+                                        </div>
+                                        <div class="my-4 border-1 border-secondary border"></div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5 for="first" class="form-label main-title fs-6 bold-label">Error Code
+                                                </h5>
+                                                <input type="text" style="width:-webkit-fill-available;" class="bg-red text-center py-1" value="R Job No"
+                                                    name="">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h5 for="first" class="form-label main-title fs-6 bold-label">Error
+                                                    Description</h5>
+                                                <input t ype="text" style="width:-webkit-fill-available;"
+                                                    class="bg-red mb-3 text-center py-1" name="" value="R Job No">
+                                                <input type="text" style="width:-webkit-fill-available;"
+                                                    class="bg-secondary text-white py-1 text-center" name=""
+                                                    value="Today Error List">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg col-3">
-                                        <div class="mb-2 px-2 pt-3 main prog-para-border">
-                                            <label for="first"
-                                                class="form-label main-title-cool bold-label fs-6">Weld-2</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-secondary text-center">
+                        <label for="first" class="main-title fs-4 bold-label text-white m-0 text-center">Suggestion
+                            window parameter</label>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="border border-1 border-secondary p-2 h-100">
+                                            <label for="first" class="form-label main-title fs-6 bold-label">Selectable
+                                                parameters</label>
                                             <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="weld_2_t"
-                                                    class="width-per-30 fs-7 medium-label">T(cly):</label>
-                                                <input class="ms-2 form-control width-per-70 weld2 medium-label"
+                                                <label for="weld_2_t" class="width-per-30 fs-7 medium-label">Sheet
+                                                    type</label>
+                                                <div class="ms-2 width-web">
+                                                    <select name="sheetType" class="form-select "
+                                                        aria-label="Default select example" id="sheetType">
+                                                        <option>--select--</option>
+                                                        <option value="65832ca98c2be25f010f4e61">GI</option>
+                                                        <option value="65832c5f8c2be25f010f4e60">MILD</option>
+                                                        <option value="65942bad1bfbe93e13a0f4a8">SS</option>
+                                                        <option value="65942bad1bfbe93e13a0f4a9">dsoni</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_2_t" class="width-per-30 fs-7 medium-label">Sheet
+                                                    Thikness</label>
+                                                <div class="ms-2 width-web">
+                                                    <select name="thickness" id="thickness" class="form-select "
+                                                        aria-label="Default select example">
+                                                        <option>--select--</option>
+                                                        <option value="6594e521302a46bf1edc4865">1-4.5</option>
+                                                        <option value="6594e6fd302a46bf1edc486e">1.2-3.5</option>
+                                                        <option value="6594e222302a46bf1edc4850">0.8-1.5</option>
+                                                        <option value="6594e737302a46bf1edc4870">1.2-4.5</option>
+                                                        <option value="6594de47302a46bf1edc4840">0.5-1.2</option>
+                                                        <option value="6594e30f302a46bf1edc4857">0.8-4</option>
+                                                        <option value="6594e54d302a46bf1edc4866">1-5</option>
+                                                        <option value="6594e647302a46bf1edc4869">1.2-1.8</option>
+                                                        <option value="6594df5b302a46bf1edc484c">0.5-5</option>
+                                                        <option value="6594ddd8302a46bf1edc483f">0.5-1</option>
+                                                        <option value="6594de6b302a46bf1edc4841">0.5-1.5</option>
+                                                        <option value="6594df1b302a46bf1edc4849">0.5-3.5</option>
+                                                        <option value="6594e418302a46bf1edc485d">1-1.8</option>
+                                                        <option value="6594dec6302a46bf1edc4845">0.5-2.2</option>
+                                                        <option value="6594e7a9302a46bf1edc4873">1.5-1.5</option>
+                                                        <option value="658662e220f79624df066d2e">0.5-0.8</option>
+                                                        <option value="6594e1d3302a46bf1edc484e">0.8-1</option>
+                                                        <option value="6594e50b302a46bf1edc4864">1-4</option>
+                                                        <option value="6594e713302a46bf1edc486f">1.2-4</option>
+                                                        <option value="6594e3fe302a46bf1edc485c">1-1.5</option>
+                                                        <option value="6594e242302a46bf1edc4851">0.8-1.8</option>
+                                                        <option value="6594e265302a46bf1edc4852">0.8-2</option>
+                                                        <option value="6594e589302a46bf1edc4867">1.2-1.2</option>
+                                                        <option value="6594e660302a46bf1edc486a">1.2-2</option>
+                                                        <option value="6594e2d9302a46bf1edc4855">0.8-3</option>
+                                                        <option value="6594df29302a46bf1edc484a">0.5-4</option>
+                                                        <option value="6594df7e302a46bf1edc484d">0.8-0.8</option>
+                                                        <option value="6594e289302a46bf1edc4853">0.8-2.2</option>
+                                                        <option value="6594e49b302a46bf1edc4862">1-3</option>
+                                                        <option value="6594e77d302a46bf1edc4872">1.2-5</option>
+                                                        <option value="6594e3e0302a46bf1edc485b">1-1.2</option>
+                                                        <option value="6594e6a6302a46bf1edc486c">1.2-2.5</option>
+                                                        <option value="658662e220f79624df066d2d">0.5-0.5</option>
+                                                        <option value="6594e46c302a46bf1edc4861">1-2.5</option>
+                                                        <option value="6594defe302a46bf1edc4848">0.5-3</option>
+                                                        <option value="6594e32b302a46bf1edc4858">0.8-4.5</option>
+                                                        <option value="6594e62c302a46bf1edc4868">1.2-1.5</option>
+                                                        <option value="6594e208302a46bf1edc484f">0.8-1.2</option>
+                                                        <option value="6594de84302a46bf1edc4842">0.5-1.8</option>
+                                                        <option value="6594ded8302a46bf1edc4846">0.5-2.5</option>
+                                                        <option value="6594df41302a46bf1edc484b">0.5-4.5</option>
+                                                        <option value="6594e2f2302a46bf1edc4856">0.8-3.5</option>
+                                                        <option value="6594e354302a46bf1edc4859">0.8-5</option>
+                                                        <option value="6594e375302a46bf1edc485a">1-1</option>
+                                                        <option value="6594e4e7302a46bf1edc4863">1-3.5</option>
+                                                        <option value="6594e6d7302a46bf1edc486d">1.2-3</option>
+                                                        <option value="6594dea2302a46bf1edc4843">0.5-2</option>
+                                                        <option value="6594e453302a46bf1edc4860">1-2.2</option>
+                                                        <option value="6594e2a9302a46bf1edc4854">0.8-2.5</option>
+                                                        <option value="6594e42f302a46bf1edc485e">1-2</option>
+                                                        <option value="6594e68d302a46bf1edc486b">1.2-2.2</option>
+                                                        <option value="6594ec4c302a46bf1edc4886">1.8-2.2</option>
+                                                        <option value="6594ec2d302a46bf1edc4885">1.8-2</option>
+                                                        <option value="6594ea32302a46bf1edc487f">1.5-3</option>
+                                                        <option value="6594ec6c302a46bf1edc4887">1.8-2.5</option>
+                                                        <option value="6594ed71302a46bf1edc488e">2-2.2</option>
+                                                        <option value="6594ef61302a46bf1edc4899">2.2-3</option>
+                                                        <option value="6594e9cf302a46bf1edc487c">1.5-2.2</option>
+                                                        <option value="6594f2a3302a46bf1edc48a5">3-3</option>
+                                                        <option value="6594f3bc302a46bf1edc48ab">3.5-4</option>
+                                                        <option value="6594ed9a302a46bf1edc4890">2-2.5</option>
+                                                        <option value="6594f19e302a46bf1edc489f">2.5-2.5</option>
+                                                        <option value="6594f1ed302a46bf1edc48a0">2.5-3</option>
+                                                        <option value="6594ea85302a46bf1edc4882">1.5-4.5</option>
+                                                        <option value="6594eed7302a46bf1edc4897">2.2-2.2</option>
+                                                        <option value="6594ef99302a46bf1edc489b">2.2-4</option>
+                                                        <option value="6594efd1302a46bf1edc489d">2.2-5</option>
+                                                        <option value="6594ed22302a46bf1edc488d">2-2</option>
+                                                        <option value="6594f2e9302a46bf1edc48a6">3-3.5</option>
+                                                        <option value="6594f41f302a46bf1edc48ae">4-4</option>
+                                                        <option value="6594edb9302a46bf1edc4891">2-3</option>
+                                                        <option value="6594ee8b302a46bf1edc4895">2-4.5</option>
+                                                        <option value="6594f20b302a46bf1edc48a1">2.5-3.5</option>
+                                                        <option value="6594f24c302a46bf1edc48a3">2.5-4.5</option>
+                                                        <option value="6594ee05302a46bf1edc4893">2-4</option>
+                                                        <option value="6594efb2302a46bf1edc489c">2.2-4.5</option>
+                                                        <option value="6594f274302a46bf1edc48a4">2.5-5</option>
+                                                        <option value="6594e973302a46bf1edc487a">1.5-1.8</option>
+                                                        <option value="6594e9b1302a46bf1edc487b">1.5-2</option>
+                                                        <option value="6594ea16302a46bf1edc487e">1.5-2.5</option>
+                                                        <option value="6594f222302a46bf1edc48a2">2.5-4</option>
+                                                        <option value="6594f47d302a46bf1edc48b0">4-5</option>
+                                                        <option value="6594ea4a302a46bf1edc4880">1.5-3.5</option>
+                                                        <option value="6594ecd1302a46bf1edc488a">1.8-4</option>
+                                                        <option value="6594f305302a46bf1edc48a7">3-4</option>
+                                                        <option value="6594f468302a46bf1edc48af">4-4.5</option>
+                                                        <option value="6594eea5302a46bf1edc4896">2-5</option>
+                                                        <option value="6594ea63302a46bf1edc4881">1.5-4</option>
+                                                        <option value="6594eab6302a46bf1edc4884">1.8-1.8</option>
+                                                        <option value="6594ef7f302a46bf1edc489a">2.2-3.5</option>
+                                                        <option value="6594f32a302a46bf1edc48a8">3-4.5</option>
+                                                        <option value="6594ecb8302a46bf1edc4889">1.8-3.5</option>
+                                                        <option value="6594ecfe302a46bf1edc488c">1.8-5</option>
+                                                        <option value="6594edea302a46bf1edc4892">2-3.5</option>
+                                                        <option value="6594f400302a46bf1edc48ad">3.5-5</option>
+                                                        <option value="6594f4f3302a46bf1edc48b3">5-5</option>
+                                                        <option value="6594f34e302a46bf1edc48a9">3-5</option>
+                                                        <option value="6594eaa0302a46bf1edc4883">1.5-5</option>
+                                                        <option value="6594ecea302a46bf1edc488b">1.8-4.5</option>
+                                                        <option value="6594ef3d302a46bf1edc4898">2.2-2.5</option>
+                                                        <option value="6594f4de302a46bf1edc48b2">4.5-5</option>
+                                                        <option value="6594ec98302a46bf1edc4888">1.8-3</option>
+                                                        <option value="6594f370302a46bf1edc48aa">3.5-3.5</option>
+                                                        <option value="6594f3d8302a46bf1edc48ac">3.5-4.5</option>
+                                                        <option value="6594f497302a46bf1edc48b1">4.5-4.5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_2_t" class="width-per-30 fs-7 medium-label">Welding
+                                                    class</label>
+                                                <div class="ms-2 width-web">
+                                                    <select name="sheetType" class="form-select "
+                                                        aria-label="Default select example" id="sheetType">
+                                                        <option>--select--</option>
+                                                        <option value="65832ca98c2be25f010f4e61">A</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="border border-1 border-secondary p-2 h-100">
+                                            <label for="first" class="form-label main-title fs-6 bold-label">Reference
+                                                parameters
+                                            </label>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_2_t" class="width-per-30 fs-7 medium-label">Current
+                                                    KA:</label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label"
                                                     name="weld-2_t" type="text" id="weld_2_t">
                                             </div>
                                             <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="weld_2_ef"
-                                                    class="width-per-30 medium-label fs-7">EF(kgf):</label>
-                                                <input class="ms-2 form-control width-per-70 weld2 medium-label"
+                                                <label for="weld_2_ef" class="width-per-30 medium-label fs-7">Weld
+                                                    time:</label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label"
                                                     name="weld-2_ef" type="text" id="weld_2_ef"
                                                     onchange="onWeld2ForceChange(this.value);">
                                             </div>
                                             <div class="d-flex justify-content-end align-items-center mb-2">
                                                 <label for="weld_2_l" id="weld_2_heat_label"
-                                                    class="width-per-30 medium-label fs-7">l(KA):</label>
-                                                <input class="ms-2 form-control width-per-70 weld2 medium-label"
+                                                    class="width-per-30 medium-label fs-7">Force kgf:</label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label"
                                                     name="weld-2_l" type="text" id="weld_2_l">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg col-3">
-                                        <div class="mb-2 px-2 pt-3 main prog-para-border weld3">
-                                            <label for="first"
-                                                class="form-label main-title-cool bold-label fs-6">Cool-2</label>
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="cool_2_t"
-                                                    class="width-per-30 fs-7 medium-label">T(cly):</label>
-                                                <input class="ms-2 form-control width-per-70 weld3 medium-label"
-                                                    name="cool_2_t" type="text" id="cool_2_t" disabled="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg col-3">
-                                        <div class="mb-2 px-2 pt-3 main prog-para-border weld3">
-                                            <label for="first"
-                                                class="form-label main-title-cool bold-label fs-6">Weld-3</label>
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="weld_3_t"
-                                                    class="width-per-30 medium-label fs-7">T(cly):</label>
-                                                <input class="ms-2 form-control width-per-70 weld3 medium-label"
-                                                    name="weld_3_t" type="text" id="weld_3_t" disabled="">
-                                            </div>
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="weld_3_ef"
-                                                    class="width-per-30 fs-7 medium-label">EF(kgf):</label>
-                                                <input class="ms-2 form-control width-per-70 weld3 medium-label"
-                                                    name="weld_3_ef" type="text" id="weld_3_ef" disabled="">
-                                            </div>
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="weld_3_l" id="weld_3_heat_label"
-                                                    class="width-per-30 medium-label fs-7">Heat(%):</label>
-                                                <input class="ms-2 form-control width-per-70 weld3 medium-label"
-                                                    name="weld_3_l" type="text" id="weld_3_l" disabled="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                </div>  
-                <div class="col-md-3 shadow">  
-                    <div class="row pt-4 px-3">
-                         <label for="first" class="fs-5 bold-label mt-2 fw-bold">Feedback</label>
-                        <div class="col-lg-12 col-md-4 main secondary-border py-2">
-                            <label for="first" class="form-label main-title fs-6 bold-label">Weld-1</label>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="actual_current" class="bold-label">Actual current:</label>
-                                <input type="text" class="bg-red ms-2 " name="actual_current"
-                                    id="actual_current"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="actual_weld_time" class="bold-label">Actual weld
-                                    time:</label>
-                                <input type="text" class="bg-red ms-2 " name="actual_weld_time"
-                                    id="actual_weld_time"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="power_factor" class="bold-label">Primary Current:</label>
-                                <input type="text" class="bg-red ms-2 " name="power_factor"
-                                    id="power_factor" style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="power_factor" class="bold-label">Heat %:</label>
-                                <input type="text" class="bg-red ms-2 " name="power_factor"
-                                    id="heat_percentage"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 col-md-4 main secondary-border py-2 ">
-                            <label for="first" class="form-label main-title fs-6 bold-label">Weld-2</label>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="w2_actual_current" class="bold-label">Actual
-                                    current:</label>
-                                <input type="text" class="bg-red ms-2 " name="actual_current"
-                                    id="w2_actual_current"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="w2_actual_weld_time" class="bold-label">Actual weld
-                                    time:</label>
-                                <input type="text" class="bg-red ms-2 " name="actual_weld_time"
-                                    id="w2_actual_weld_time"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="w2_power_factor" class="bold-label">Primary Current:</label>
-                                <input type="text" class="bg-red ms-2 " name="power_factor"
-                                    id="w2_power_factor"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="power_factor" class="bold-label">Heat %:</label>
-                                <input type="text" class="bg-red ms-2 " name="power_factor"
-                                    id="w2_heat_percentage"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 col-md-4 main secondary-border py-2">
-                            <label for="first" class="form-label main-title fs-6 bold-label">Weld-3</label>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="w3_actual_current" class="bold-label">Actual
-                                    current:</label>
-                                <input type="text" class="bg-red ms-2 " name="actual_current"
-                                    id="w3_actual_current"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="w3_actual_weld_time" class="bold-label">Actual weld
-                                    time:</label>
-                                <input type="text" class="bg-red ms-2 " name="actual_weld_time"
-                                    id="w3_actual_weld_time"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="w3_power_factor" class="bold-label">Primary Current:</label>
-                                <input type="text" class="bg-red ms-2 " name="power_factor"
-                                    id="w3_power_factor"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="power_factor" class="bold-label">Heat %:</label>
-                                <input type="text" class="bg-red ms-2 " name="power_factor"
-                                    id="w3_heat_percentage"
-                                    style="font-weight:600;text-align:center;width:100px">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                        <div class="row g-3 justify-content-center">
-                        
-                            <div class="col-lg-2">
-                                <div class="bottom-margin main  secondary-border">
-                                    <label for="first" class="main-title fs-6 bold-label">Timer Details</label>
-                                    <div class="mx-lg-5 text-center">
-                                        <div class="circle-container">
-                                            <div class="outer-circle">
-                                                <div id="section_4" class="inner-circle"
-                                                    style="background-color: white;"></div>
-                                                <div id="section_1" class="quarter quarter-1"
-                                                    style="background-color: grey;"></div>
-                                                <div id="section_5" class="quarter quarter-2"
-                                                    style="background-color: white;"></div>
-                                                <div id="section_2" class="quarter quarter-3"
-                                                    style="background-color: white;"></div>
-                                                <div id="section_3" class="quarter quarter-4"
-                                                    style="background-color: grey;"></div>
-                                                <div class="line horizontal-line"></div>
-                                                <div class="handle"></div>
-                                                <div class="handle-horizontal"></div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-2">
-                                            <span id="time_name">Test3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="p-2 mb-3 main  secondary-border">
-                                    <label for="spot_count" class="main-title fs-6 bold-label">Spot Count</label>
-                                    <div class="d-flex">
-                                        <input type="text" name="spots_Count" id="spot_count" class="bg-red"
-                                            style="font-weight:600; width:-webkit-fill-available;text-align:center;">
-                                    </div>
-                                </div>
-                                <div class="p-2 main  secondary-border">
-                                    <label for="job_count" class="main-title fs-6 bold-label">Job Count</label>
-                                    <div class="d-flex">
-                                        <input type="text" name="job_Count" id="job_count" class="bg-red"
-                                            style="font-weight:600; width:-webkit-fill-available;text-align:center;">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- <div class="col-1 main secondary-border py-2">
-                                    <label for="first" class="main-title fs-6 bold-label">Program Actions</label>
-                                    <div class="row mx-2 mt-5">
-                                        <button type="button" id="saveProgram"
-                                            class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
-                                            style="background-color: lightgreen;">Save
-                                            Program
-                                        </button>
-                                    </div>
-                                    <div class="row m-2 mt-3">
-                                        <button type="button" id="sendProgram"
-                                            class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
-                                            style="background-color: lightgreen;">Send
-                                            Program
-                                        </button>
-                                    </div>
-                                </div> -->
-                        </div>
-
-
-                        <div class="row align-items-center g-3 mt-2 justify-content-around">
-                            <div class="col-2 main secondary-border py-2">
-                                <label for="global_program_no" class="main-title fs-6 bold-label">Update
-                                    Timestamp</label>
-                                <div class="d-flex">
-                                    <input type="text" name="global_count" id="update_timestamp" class="bg-red " style="font-size:13px; width:-webkit-fill-available;text-align:center;height: 25px;
-                                         font-weight:600;">
-                                </div>
-
-
-                            </div>
-                            <div class="col-2 main secondary-border py-2">
-                                <label for="global_program_no" class="main-title fs-6 bold-label">Program No</label>
-                                <div class="d-flex">
-                                    <input type="text" name="global_count" id="feedback_global_program_no"
-                                        class="bg-red"
-                                        style="font-weight:600;width:-webkit-fill-available;text-align:center;">
-                                </div>
-
-
-                            </div>
-                            <div class="col-1 main secondary-border py-1">
-                                <label for="first" class="main-title mb-3 bold-label">Error</label>
-                                <div class="py-2">
-                                    <input type="text" class="bg-red " name="error" id="error"
-                                        style="width:-webkit-fill-available;font-weight:600;text-align:center;">
-                                </div>
-                            </div>
-                            <div class="col-3 main secondary-border py-1">
-                                <label for="error_desc" class="main-title mb-3 bold-label">Error Description</label>
-                                <div class="py-2">
-                                    <input type="text" class="bg-red" name="error_desc" id="error_desc"
-                                        style="width:-webkit-fill-available;font-weight:600;text-align:center;">
-                                </div>
-                            </div>
-                            <div class="col-3 main secondary-border py-2">
-                                <label for="first" class="main-title fs-6 bold-label">Program Actions</label>
-                                <div class="btn-group-lg mt-2">
-                                    <button type="button" id="saveProgram"
-                                        class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
-                                        style="background-color: lightgreen;">Save
-                                        Program
-                                    </button>
-                                    <button type="button" id="sendProgram"
-                                        class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
-                                        style="background-color: lightgreen;">Send
-                                        Program
-                                    </button>
-                                    <button type="button" id="sendProgram"
-                                        class="btn  fw text-black ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label"
-                                        style="background-color: lightgreen;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-                                        More Actions
-                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- <div class="btn-group my-1">
-                            <button type="button" id="btnCreateNewProgram"
-                                class="btn bg-blue fw text-white ms-4 rounded-0 bold-label">
-                                New Program
-                            </button>
-                            <button type="button" class="btn bg-blue fw text-white ms-2 width-max rounded-0 bold-label"
-                                id="btnImportProgram">Import Program
-                            </button>
-                            <input type="file" style="display: none;" id="importInputFile">
-                            <button type="button" class="btn bg-blue fw text-white ms-2 width-max rounded-0 bold-label"
-                                id="btnCopyProgram" onclick="openCopyProgramModel();">Copy Program</button>
-
-
-                            <button type="button" class="btn bg-blue fw text-white ms-2 width-max rounded-0 bold-label"
-                                id="btnBackUp">Back Up</button>
-
-                            <button class="btn bg-blue fw text-white ms-2 width-max rounded-0 bold-label" id="btnGlobal"
-                                type="button" onclick="window.location.href='global.html'">Global Settings
-                            </button>
-                            <button type="button" onclick="window.location.href='sequencePV.html'" id="btnSeqPV"
-                                class="btn bg-blue fw text-white ms-2 px-3 rounded-0 bold-label">Sequence PV
-                            </button>
-                            <button type="button" class="btn bg-danger text-white ms-2 p-0 rounded-0 bold-label"
-                                data-bs-toggle="modal" onclick="viewErrorCodes()">Error List</button>
-                        </div> -->
-                </div>
-            </div>
-        </div>
-    </section>
-   <!-- Button trigger modal -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="p-4 py-1 main main-border">
-                <label for="first" class="main-title fs-6 bold-label">Suggestion window parameter</label>
-                <div class="mb-3 mt-3 py-0 main secondary-border">
-                    <!-- <div class="mb-4"> -->
-                        <div class="main secondary-border">
-
-
-                    <label class="main-title fs-6 bold-label">Selectable parameters</label>
-                    <div class="row p-3">
-                   
-                    <!-- <div class="col-lg-4 py-2"> -->
-                    
-                    <!-- <div class="col-lg-4 py-2"> -->
-                    <div class="col-lg-4 col-md-6">
-
-
-                        <div class="d-flex justify-content-end align-items-center mb-2">
-                            <label for="sheetType" class="bold-label">Sheet type</label>
-                            <div class="ms-2 width-web">
-                                <select name="sheetType" class="form-select bg-gray" aria-label="Default select example" id="sheetType"><option>--select--</option><option value="65832ca98c2be25f010f4e61">GI</option><option value="65832c5f8c2be25f010f4e60">MILD</option><option value="65942bad1bfbe93e13a0f4a8">SS</option><option value="65942bad1bfbe93e13a0f4a9">dsoni</option></select>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="col-lg-4 py-2"> -->
-
-                    <div class="col-lg-4 col-md-6">
-
-
-                        <div class="d-flex justify-content-end align-items-center mb-2">
-                                <label for="thickness" class="bold-label">Sheet thickness</label>
-                                
-                            <div class="ms-2 width-web">
-                                <select name="thickness" id="thickness" class="form-select bg-gray" aria-label="Default select example"><option>--select--</option><option value="6594e521302a46bf1edc4865">1-4.5</option><option value="6594e6fd302a46bf1edc486e">1.2-3.5</option><option value="6594e222302a46bf1edc4850">0.8-1.5</option><option value="6594e737302a46bf1edc4870">1.2-4.5</option><option value="6594de47302a46bf1edc4840">0.5-1.2</option><option value="6594e30f302a46bf1edc4857">0.8-4</option><option value="6594e54d302a46bf1edc4866">1-5</option><option value="6594e647302a46bf1edc4869">1.2-1.8</option><option value="6594df5b302a46bf1edc484c">0.5-5</option><option value="6594ddd8302a46bf1edc483f">0.5-1</option><option value="6594de6b302a46bf1edc4841">0.5-1.5</option><option value="6594df1b302a46bf1edc4849">0.5-3.5</option><option value="6594e418302a46bf1edc485d">1-1.8</option><option value="6594dec6302a46bf1edc4845">0.5-2.2</option><option value="6594e7a9302a46bf1edc4873">1.5-1.5</option><option value="658662e220f79624df066d2e">0.5-0.8</option><option value="6594e1d3302a46bf1edc484e">0.8-1</option><option value="6594e50b302a46bf1edc4864">1-4</option><option value="6594e713302a46bf1edc486f">1.2-4</option><option value="6594e3fe302a46bf1edc485c">1-1.5</option><option value="6594e242302a46bf1edc4851">0.8-1.8</option><option value="6594e265302a46bf1edc4852">0.8-2</option><option value="6594e589302a46bf1edc4867">1.2-1.2</option><option value="6594e660302a46bf1edc486a">1.2-2</option><option value="6594e2d9302a46bf1edc4855">0.8-3</option><option value="6594df29302a46bf1edc484a">0.5-4</option><option value="6594df7e302a46bf1edc484d">0.8-0.8</option><option value="6594e289302a46bf1edc4853">0.8-2.2</option><option value="6594e49b302a46bf1edc4862">1-3</option><option value="6594e77d302a46bf1edc4872">1.2-5</option><option value="6594e3e0302a46bf1edc485b">1-1.2</option><option value="6594e6a6302a46bf1edc486c">1.2-2.5</option><option value="658662e220f79624df066d2d">0.5-0.5</option><option value="6594e46c302a46bf1edc4861">1-2.5</option><option value="6594defe302a46bf1edc4848">0.5-3</option><option value="6594e32b302a46bf1edc4858">0.8-4.5</option><option value="6594e62c302a46bf1edc4868">1.2-1.5</option><option value="6594e208302a46bf1edc484f">0.8-1.2</option><option value="6594de84302a46bf1edc4842">0.5-1.8</option><option value="6594ded8302a46bf1edc4846">0.5-2.5</option><option value="6594df41302a46bf1edc484b">0.5-4.5</option><option value="6594e2f2302a46bf1edc4856">0.8-3.5</option><option value="6594e354302a46bf1edc4859">0.8-5</option><option value="6594e375302a46bf1edc485a">1-1</option><option value="6594e4e7302a46bf1edc4863">1-3.5</option><option value="6594e6d7302a46bf1edc486d">1.2-3</option><option value="6594dea2302a46bf1edc4843">0.5-2</option><option value="6594e453302a46bf1edc4860">1-2.2</option><option value="6594e2a9302a46bf1edc4854">0.8-2.5</option><option value="6594e42f302a46bf1edc485e">1-2</option><option value="6594e68d302a46bf1edc486b">1.2-2.2</option><option value="6594ec4c302a46bf1edc4886">1.8-2.2</option><option value="6594ec2d302a46bf1edc4885">1.8-2</option><option value="6594ea32302a46bf1edc487f">1.5-3</option><option value="6594ec6c302a46bf1edc4887">1.8-2.5</option><option value="6594ed71302a46bf1edc488e">2-2.2</option><option value="6594ef61302a46bf1edc4899">2.2-3</option><option value="6594e9cf302a46bf1edc487c">1.5-2.2</option><option value="6594f2a3302a46bf1edc48a5">3-3</option><option value="6594f3bc302a46bf1edc48ab">3.5-4</option><option value="6594ed9a302a46bf1edc4890">2-2.5</option><option value="6594f19e302a46bf1edc489f">2.5-2.5</option><option value="6594f1ed302a46bf1edc48a0">2.5-3</option><option value="6594ea85302a46bf1edc4882">1.5-4.5</option><option value="6594eed7302a46bf1edc4897">2.2-2.2</option><option value="6594ef99302a46bf1edc489b">2.2-4</option><option value="6594efd1302a46bf1edc489d">2.2-5</option><option value="6594ed22302a46bf1edc488d">2-2</option><option value="6594f2e9302a46bf1edc48a6">3-3.5</option><option value="6594f41f302a46bf1edc48ae">4-4</option><option value="6594edb9302a46bf1edc4891">2-3</option><option value="6594ee8b302a46bf1edc4895">2-4.5</option><option value="6594f20b302a46bf1edc48a1">2.5-3.5</option><option value="6594f24c302a46bf1edc48a3">2.5-4.5</option><option value="6594ee05302a46bf1edc4893">2-4</option><option value="6594efb2302a46bf1edc489c">2.2-4.5</option><option value="6594f274302a46bf1edc48a4">2.5-5</option><option value="6594e973302a46bf1edc487a">1.5-1.8</option><option value="6594e9b1302a46bf1edc487b">1.5-2</option><option value="6594ea16302a46bf1edc487e">1.5-2.5</option><option value="6594f222302a46bf1edc48a2">2.5-4</option><option value="6594f47d302a46bf1edc48b0">4-5</option><option value="6594ea4a302a46bf1edc4880">1.5-3.5</option><option value="6594ecd1302a46bf1edc488a">1.8-4</option><option value="6594f305302a46bf1edc48a7">3-4</option><option value="6594f468302a46bf1edc48af">4-4.5</option><option value="6594eea5302a46bf1edc4896">2-5</option><option value="6594ea63302a46bf1edc4881">1.5-4</option><option value="6594eab6302a46bf1edc4884">1.8-1.8</option><option value="6594ef7f302a46bf1edc489a">2.2-3.5</option><option value="6594f32a302a46bf1edc48a8">3-4.5</option><option value="6594ecb8302a46bf1edc4889">1.8-3.5</option><option value="6594ecfe302a46bf1edc488c">1.8-5</option><option value="6594edea302a46bf1edc4892">2-3.5</option><option value="6594f400302a46bf1edc48ad">3.5-5</option><option value="6594f4f3302a46bf1edc48b3">5-5</option><option value="6594f34e302a46bf1edc48a9">3-5</option><option value="6594eaa0302a46bf1edc4883">1.5-5</option><option value="6594ecea302a46bf1edc488b">1.8-4.5</option><option value="6594ef3d302a46bf1edc4898">2.2-2.5</option><option value="6594f4de302a46bf1edc48b2">4.5-5</option><option value="6594ec98302a46bf1edc4888">1.8-3</option><option value="6594f370302a46bf1edc48aa">3.5-3.5</option><option value="6594f3d8302a46bf1edc48ac">3.5-4.5</option><option value="6594f497302a46bf1edc48b1">4.5-4.5</option></select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-
-
-                        <div class="d-flex justify-content-end align-items-center mb-2">
-                            <label for="weldingClass" class="bold-label">Welding class</label>
-                            <div class="ms-2 width-web">
-                                <select name="weldingClass" id="weldingClass" class="form-select bg-gray" aria-label="Default select example">
-                                    <option>A</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-
-                    </div>
-
-                    <div class="col-12 px-4">
-                        <div class="mb-2 pt-1 px-2 justify-content-center d-flex main secondary-border">
-                            <label class="main-title fs-6 bold-label">Reference parameters</label>
-                            <div class="p-3">
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="current" class="bold-label">Current KA:</label>
-                                    <input type="text" class="ms-2 form-control width-70" name="current_ka" id="current">
-                                </div>
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="weldTime" class="bold-label">Weld time:</label>
-                                    <input type="text" class="ms-2 form-control width-70" name="weldTime" id="weldTime">
-                                </div>
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="force" class="bold-label">Force kgf:</label>
-                                    <input type="text" class="ms-2 form-control width-70" name="force" id="force">
-                                </div>
-
-                            </div>
-                            <div class="p-3 text-start">
-                             <!-- <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="Nugget" class="bold-label">Weldding nugget mm:</label>
-                                    <input type="text" class="ms-2 form-control width-70" name="Nugget"
-                                           id="Nugget">
-                                </div>
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="Electron" class="bold-label">Electrode diameter mm:</label>
-                                    <input type="text" class="ms-2 form-control width-70" name="Electron"
-                                           id="Electron">
-                                </div>
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="teatStrength" class="bold-label">Tear strength Kg:</label>
-                                    <input type="text" class="ms-2 form-control width-70" name="teatStrength"
-                                           id="teatStrength">
-                                </div>-->
-                                <!--
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="minSpot" class="">Min spots distance mm:</label>
-                                    <input type="text" class="ms-2 form-control width-100" name="minSpot"
-                                           id="minSpot">
-                                </div> -->
-                                <!--
-                                <div class="d-flex justify-content-end align-items-center mb-2">
-                                    <label for="minSheetOverlap" class="">Min sheet overlap mm:</label>
-                                    <input type="text" class="ms-2 form-control width-100" name="minSheetOverlap"
-                                           id="minSheetOverlap">
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-evenly">
+                        <div class="d-flex justify-content-evenly mt-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="result" id="result" checked="">50Hz
                                 <label class="form-check-label" for="result">
-                                    
+
                                 </label>
                             </div>
-                          <!--  <div class="form-check"> 
-                                <input class="form-check-input" type="radio" name="result" id="result2">
-                                <label class="form-check-label" for="result2">
-                                    60 HZ
-                                </label>
-                            </div>-->
+
                         </div>
-                        <div class="d-flex justify-content-center pb-1">
-                            <button class="btn pressure-btn rounded-0 bg-blue text-white copy">
+                        <div class="d-flex justify-content-center pb-1 mt-3">
+                            <button class="btn pressure-btn rounded-0 bg-secondary text-white copy">
                                 Copy
                             </button>
                         </div>
                     </div>
-                <!-- </div> -->
+                </div>
             </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-  <div class="offcanvas-header">
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
 
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-     <nav id="sidebarMenu" class="d-md-block bg-light sidebar collapse">
-                <div class="position-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <button type="button" id="btnCreateNewProgram" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label">New Program</button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnImportProgram">Import Program</button>
-                        </li>
-                        <li class="nav-item">
-                            <input type="file" style="display: none;" id="importInputFile">
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnCopyProgram" onclick="openCopyProgramModel();">Copy Program</button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnBackUp">Back Up</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnGlobal" type="button" onclick="window.location.href='global.html'">Global Settings</button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" onclick="window.location.href='sequencePV.html'" id="btnSeqPV" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label">Sequence PV</button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn bg-danger text-white w-100 my-2 rounded-0 bold-label" data-bs-toggle="modal" onclick="viewErrorCodes()">Error List</button>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <nav id="sidebarMenu" class="d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <button type="button" id="btnCreateNewProgram"
+                                    class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label">New
+                                    Program</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label"
+                                    id="btnImportProgram">Import Program</button>
+                            </li>
+                            <li class="nav-item">
+                                <input type="file" style="display: none;" id="importInputFile">
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label"
+                                    id="btnCopyProgram" onclick="openCopyProgramModel();">Copy Program</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label"
+                                    id="btnBackUp">Back Up</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label" id="btnGlobal"
+                                    type="button" onclick="window.location.href='global.html'">Global Settings</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" onclick="window.location.href='sequencePV.html'" id="btnSeqPV"
+                                    class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label">Sequence
+                                    PV</button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="btn bg-danger text-white w-100 my-2 rounded-0 bold-label"
+                                    data-bs-toggle="modal" onclick="viewErrorCodes()">Error List</button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
-  </div>
-</div>
+            </div>
+        </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
