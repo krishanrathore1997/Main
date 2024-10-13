@@ -6,7 +6,9 @@
 
 body {
   overflow: scroll;
-  background-color: #80808029;
+  /* background-color: #80808029; */
+    background-color: #fffcfcb8;
+    backdrop-filter: blur(50px);
 }
 
 .main {
@@ -193,11 +195,21 @@ input[type='checkbox'] {
 .sheet-thickness{
   border: 2px solid black;
 }
+
+.bg-main{
+background-color: #e4e4e4 !important;
+}
 .circle-container {
   position: relative;
   width: 100px;
   height: 100px;
   margin: auto;
+}
+.active {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+  border-radius: 50px;
+  width: 60% !important;
 }
 
 .outer-circle {
