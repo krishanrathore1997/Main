@@ -523,8 +523,8 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="col-md-6">
-                        <div class="row g-3">
+                    <div class="col-md-6" id="rightDiv">
+                        <div class="row g-3" id="topDiv">
                             <div class="col-md-4">
                                 <div class="shadow main border main-border card bg-main" style="height: 100%;">
                                     <div class="card-header bg-secondary text-center">
@@ -645,8 +645,8 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="col-12 mt-3">
-                            <div class="card shadow bg-main border ps-lg-0">
+                        <div class="col-12 mt-3" id="bottomDiv">
+                            <div class="card shadow bg-main ps-lg-0" id="card">
                                 <div class="card-header bg-secondary text-center">
                                     <label for="first"
                                         class="main-title fs-6 bold-label text-white m-0 text-center">Feedback</label>
@@ -1063,6 +1063,23 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 <script>
+
+window.onload = function() {
+    // Initial check when the page has fully loaded
+    if (window.innerWidth >= 1040) {
+
+        // Corrected way to get the height of the elements
+        let rightDiv = document.getElementById("rightDiv").offsetHeight;
+        let topDiv = document.getElementById("topDiv").offsetHeight;
+        let bottomDiv = document.getElementById("bottomDiv").offsetHeight;
+        
+        let card = document.getElementById("card");
+        // Correctly setting the bottom padding using 'paddingBottom'
+        card.style.paddingBottom = (rightDiv - (topDiv + bottomDiv)) + 'px';
+    }
+};
+
+
 
     let program_selection_data = [];
     let timerDetails = {}
@@ -3264,6 +3281,9 @@
             $("#pre_squeeze_t").val('0');
         }
     }
+
+ 
+
 
 
 </script>
