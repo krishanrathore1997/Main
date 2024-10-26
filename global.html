@@ -181,13 +181,13 @@
                                         </div>
                                     </div>
                                     <div class="row bottom-margin justify-content-start align-items-center">
-                                        <div class="col-lg-2">
+                                        <div class="col-lg-4">
                                             <label class="bold-label" for="">Life Count</label>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-8">
                                             <input class="form-control" id="life_count_set" type="text">
                                         </div>
-                                        <div class="col-lg-4 text-center">
+                                        <div class="col-lg-12 text-center mt-3">
                                             <button class="btn bg-blue text-white rounded-0" id="resetCounter" type="button">Reset Counter </button>
                                         </div>
                                         <div class="my-3" id="containerResetCounter" style="display: none;">
@@ -425,6 +425,20 @@
                             </div>
                         </div>
 
+                    </div>
+                    <div class="col-lg-6 mt-4 text-center">
+                        <div class="btn-group">
+                            <button class="btn bg-secondary fw-bold text-white mx-4 px-3 rounded-0" id="saveGlobalSetting" type="button">Save
+                            </button>
+                            <button class="btn bg-secondary fw-bold text-white mx-4 px-3 rounded-0" id="sendGlobalSetting" type="button">Send
+                            </button>
+                            <button class="btn bg-secondary fw-bold text-white mx-4 px-3 rounded-0" onclick="window.location.href='config.html'" type="button">
+                                Back
+                            </button>
+                            <button class="btn bg-secondary fw-bold text-white mx-4 px-3 rounded-0" id="refresh" style="display: none;" type="button" onclick="doSyncFromTimer(timer_setting)">
+                                Refresh
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
