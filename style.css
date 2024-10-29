@@ -9,6 +9,11 @@ body {
   /* background-color: #80808029; */
     background-color: #f8f8f8;
 }
+table{
+  max-height: 90vh;
+  overflow: auto;
+  background-color: transparent !important;
+}
 
 .main {
   position: relative;
