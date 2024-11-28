@@ -13,6 +13,9 @@
         td {
             white-space: nowrap;
         }
+        .btn-green-hover:hover{
+            background-color: green !important;
+        }
 
         thead th {
             position: sticky;
@@ -79,12 +82,12 @@
               </button>
             <div class="menu collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item" ><a class="nav-link active" href="dashboard.html">Timer</a></li>
+                    <li class="nav-item" ><a class="nav-link active" href="#">Configuration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html" id="header_link_diag">Dashboard</a></li>
                     <li class="nav-item" ><a class="nav-link" href="log.html" id="header_link_diag">Log Data</a></li>
                     <li class="nav-item" ><a class="nav-link" href="diagnosis.html" id="header_link_diag">Diagnosis</a></li>
                     <li class="nav-item" ><a class="nav-link" href="user-administrtation.html" id="header_link_user"> User Administration</a></li>
                     <li class="nav-item" ><a class="nav-link" href="settings.html" id="header_link_setting"> Settings</a></li>
-                    <li class="nav-item" ><a class="nav-link" href="info.html"> Help </a></li>
                 </ul>
             </div>
         </div>
@@ -536,7 +539,7 @@
                                     <div class="d-flex h-100 justify-content-center align-items-center">
                                         <a class=""
                                         data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <img height="80" src="./add.png" alt="">
+                                        <img height="80" src="./book.png" alt="">
                                     </div>
                                 </a>
                                 </div>
@@ -571,11 +574,11 @@
                                     </div>
                                     <div class="row justify-content-evenly align-items-center" style="height: inherit;">
                                         <button type="button" id="saveProgram"
-                                            class="btn bg-secondary fw text-white ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label">Save
+                                            class="btn bg-secondary fw text-white ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label btn-green-hover">Save
                                             Program
                                         </button>
                                         <button type="button" id="sendProgram"
-                                            class="btn bg-secondary fw text-white ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label">Send
+                                            class="btn bg-secondary fw text-white ms-2 width-max rounded-0 fs-6 bold-label  text-black medium-label btn-green-hover">Send
                                             Program
                                         </button>
                                         <button type="button" id="sendProgram"
@@ -1009,10 +1012,10 @@
                                     class="btn bg-blue fw text-white w-100 my-2 rounded-0 bold-label">Sequence
                                     PV</button>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <button type="button" class="btn bg-danger text-white w-100 my-2 rounded-0 bold-label"
                                     data-bs-toggle="modal" onclick="viewErrorCodes()">Error List</button>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </nav>
@@ -2719,13 +2722,13 @@ window.onload = function() {
         else {
             //no role value exist, need to login
 
-            window.location.href = "index.html";
+            window.location.href = "config.html";
         }
     }
 
     function doLogout() {
         localStorage.removeItem("userRole");
-        window.location.href = "index.html";
+        window.location.href = "config.html";
     }
 
     function isFormValid() {

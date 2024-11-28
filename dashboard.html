@@ -41,6 +41,15 @@
       max-width: 100%;
     }
 
+    .inner-square {
+      width: 20px;
+      height: 20px;
+    }
+    .square{
+  width: 30px;
+  height: 30px;
+    }
+
     .menu ul li,
     .menu ul li a {
       width: 100%;
@@ -86,108 +95,19 @@
         </button>
         <div class="menu collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="config.html" id="header_link_diag">Configuration</a></li>
             <li class="nav-item"><a class="nav-link" href="global.html">Global Settings</a></li>
             <li class="nav-item"><a class="nav-link" href="diagnosis.html" id="header_link_diag">Diagnosis</a></li>
             <li class="nav-item"><a class="nav-link" href="user-administrtation.html" id="header_link_user"> User
                 Admin..</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
             <li class="nav-item"><a class="nav-link" href="settings.html" id="header_link_setting"> Settings</a></li>
-            <li class="nav-item"><a class="nav-link" href="info.html"> Help </a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container my-3">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="card shadow h-100">
-            <div class="card-header text-center bg-secondary border-secondary">
-                <label for="first" class="main-title fs-5 fw-bolder mb-0 text-white">Test-1</label>
-            </div>
-            <div class="card-body m-auto">
-              <a class="nav-link" href="index.html">
-              <div class="main-squre">
-                <div class="d-flex">
-                  <div class="square-1 square"></div>
-                  <div class="square-2 square"></div>
-                </div>
-                <div class="d-flex">
-                  <div class="square-3 square"></div>
-                  <div class="square-4 square"></div>
-                </div>
-                <div class="inner-square"></div>
-              </div>
-            </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card shadow h-100">
-            <div class="card-header text-center bg-secondary border-secondary">
-                <label for="first" class="main-title fs-5 fw-bolder mb-0 text-white">Test-2</label>
-            </div>
-            <div class="card-body m-auto">
-              <a class="nav-link" href="index.html">
-              <div class="main-squre">
-                <div class="d-flex">
-                  <div class="square-1 square"></div>
-                  <div class="square-2 square"></div>
-                </div>
-                <div class="d-flex">
-                  <div class="square-3 square"></div>
-                  <div class="square-4 square"></div>
-                </div>
-                <div class="inner-square"></div>
-              </div>
-            </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card shadow h-100">
-            <div class="card-header text-center bg-secondary border-secondary">
-                <label for="first" class="main-title fs-5 fw-bolder mb-0 text-white">Test-3</label>
-            </div>
-            <div class="card-body m-auto">
-              <a class="nav-link" href="index.html">
-              <div class="main-squre">
-                <div class="d-flex">
-                  <div class="square-1 square"></div>
-                  <div class="square-2 square"></div>
-                </div>
-                <div class="d-flex">
-                  <div class="square-3 square"></div>
-                  <div class="square-4 square"></div>
-                </div>
-                <div class="inner-square"></div>
-              </div>
-            </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card shadow h-100">
-            <div class="card-header text-center bg-secondary border-secondary">
-                <label for="first" class="main-title fs-5 fw-bolder mb-0 text-white">Test-4</label>
-            </div>
-            <div class="card-body m-auto">
-              <a class="nav-link" href="index.html">
-              <div class="main-squre">
-                <div class="d-flex">
-                  <div class="square-1 square"></div>
-                  <div class="square-2 square"></div>
-                </div>
-                <div class="d-flex">
-                  <div class="square-3 square"></div>
-                  <div class="square-4 square"></div>
-                </div>
-                <div class="inner-square"></div>
-              </div>
-            </a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="container-fluid my-4">
+      <div id="columns-container" class="row g-3"></div>
     </div>
    
   
@@ -200,6 +120,45 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // JavaScript code to generate columns and set the title
+    document.addEventListener('DOMContentLoaded', () => {
+      const columnsContainer = document.getElementById('columns-container');
+   
+      
+     
+
+      // Generate 60 columns
+      for (let i = 1; i <= 60; i++) {
+        const col = document.createElement('div');
+        col.className = 'col-lg col-md-2';
+
+        col.innerHTML = `
+          <div class="card shadow h-100">
+            <div class="card-header text-center bg-secondary border-secondary">
+              <label class="main-title fs-5 fw-bolder mb-0 text-white">Test-${i}</label>
+            </div>
+            <div class="card-body m-auto">
+              <a class="nav-link" href="config.html">
+                <div class="main-squre">
+                  <div class="d-flex">
+                    <div class="square square-1"></div>
+                    <div class="square square-2"></div>
+                  </div>
+                  <div class="d-flex">
+                    <div class="square square-3"></div>
+                    <div class="square square-4"></div>
+                  </div>
+                  <div class="inner-square"></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        `;
+        columnsContainer.appendChild(col);
+      }
+    });
+  </script>
 
 
 </html>
