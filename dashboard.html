@@ -82,6 +82,10 @@
     .form-check-label {
       font-size: 14px !important;
     }
+    .row-cols-10 > div {
+        flex: 0 0 10%;
+        max-width: 10%;
+    }
   </style>
 </head>
 
@@ -107,8 +111,30 @@
       </div>
     </nav>
     <div class="container-fluid my-4">
-      <div id="columns-container" class="row g-3"></div>
+      <div id="columns-container" class="row g-3 row-cols-10"></div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-md modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header bg-secondary text-center">
+                  <!-- <label for="first" class="main-title fs-4 bold-label text-white m-0 text-center">Suggestion
+                      window parameter</label> -->
+                  <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+              </div>
+              <div class="modal-body bg-main">
+                  <div class="card bg-transparent">
+                      <div class="card-body">
+                        <div class="row justify-content-center">
+                          <h4 class="text-center">Timer Tetsing</h4>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
    
   
 
@@ -125,7 +151,10 @@
     document.addEventListener('DOMContentLoaded', () => {
       const columnsContainer = document.getElementById('columns-container');
    
-      
+      window.openModal = () => {
+      const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+      modal.show();
+    };
      
 
       // Generate 60 columns
@@ -138,9 +167,8 @@
             <div class="card-header text-center bg-secondary border-secondary">
               <label class="main-title fs-5 fw-bolder mb-0 text-white">Test-${i}</label>
             </div>
-            <div class="card-body m-auto">
-              <a class="nav-link" href="config.html">
-                <div class="main-squre">
+            <div class="card-body m-auto" ondblclick="window.location='config.html';">
+                <div class="main-squre" onclick="openModal()">
                   <div class="d-flex">
                     <div class="square square-1"></div>
                     <div class="square square-2"></div>
@@ -151,7 +179,6 @@
                   </div>
                   <div class="inner-square"></div>
                 </div>
-              </a>
             </div>
           </div>
         `;
