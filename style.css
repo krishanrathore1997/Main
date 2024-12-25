@@ -248,6 +248,13 @@ background-color: #e4e4e4 !important;
 .square-1,.square-4{
   background-color: #6c757d;
 }
+.nav-link:focus, .nav-link:hover {
+  color:unset !important;
+}
+.active:hover {
+  color:black !important;
+}
+
 /* Inner square */
 .inner-square {
   width: 30px;
