@@ -982,7 +982,7 @@
             <div class="offcanvas-body">
                 <nav id="sidebarMenu" class="d-md-block bg-light sidebar collapse">
                     <div class="position-sticky">
-                        <ul class="nav flex-column">
+                        <ul class="nav flex-column">    
                             <li class="nav-item">
                                 <button type="button" id="btnCreateNewProgram"
                                     class="btn bg-secondary fw text-white w-100 my-2 rounded-0 bold-label">New
@@ -996,8 +996,17 @@
                                 <input type="file" style="display: none;" id="importInputFile">
                             </li>
                             <li class="nav-item">
-                                <button type="button" class="btn bg-secondary fw text-white w-100 my-2 rounded-0 bold-label"
-                                    id="btnCopyProgram" onclick="openCopyProgramModel();">Copy Program</button>
+                                    <button class="btn bg-secondary fw text-white w-100 my-2 rounded-0 bold-label" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        Copy Program
+                                      </button>
+                                      <div class="collapse" id="collapseExample">
+                                        <div class="card card-body">
+                                            <ol class="list-group list-group-numbered">
+                                                <li class="list-group-item bg-secondary fw text-white" data-bs-toggle="modal" data-bs-target="#singleMode" style="cursor: pointer;">Single Mode</li>
+                                                <li class="list-group-item bg-secondary fw text-white" data-bs-toggle="modal" data-bs-target="#multiMode" style="cursor: pointer;">Multi mode </li>
+                                              </ol>
+                                        </div>
+                                      </div>
                             </li>
                             <li class="nav-item">
                                 <button type="button" class="btn bg-secondary fw text-white w-100 my-2 rounded-0 bold-label"
@@ -1022,6 +1031,91 @@
 
             </div>
         </div>
+        <div class="modal fade" id="singleMode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-secondary text-center">
+                        <label for="first" class="main-title fs-4 bold-label text-white m-0 text-center">Single Mode
+                            </label>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-main">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="p-2 h-100">
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="fpn" class="width-per-30 fs-7 medium-label">From (Program No)
+                                                   </label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_t" type="text" id="weld_2_t">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="tpn" class="width-per-30 medium-label fs-7">
+                                                    To (Program No)</label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_ef" type="text" >
+                                            </div>
+                                            <!-- <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="weld_2_l" id="weld_2_heat_label" class="width-per-30 medium-label fs-7">Force kgf:</label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_l" type="text" id="weld_2_l">
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center pb-1 mt-3">
+                            <button class="btn pressure-btn rounded-0 bg-secondary text-white copy">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="modal fade" id="multiMode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-secondary text-center">
+                        <label for="first" class="main-title fs-4 bold-label text-white m-0 text-center">Multi Mode
+                            </label>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-main">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="p-2 h-100">
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="fpn" class="width-per-30 fs-7 medium-label">From (Program No)
+                                                   </label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_t" type="text" id="weld_2_t">
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="tpn" class="width-per-30 medium-label fs-7">
+                                                    To (Program No)</label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_ef" type="text" >
+                                            </div>
+                                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                                <label for="to" class="width-per-30 medium-label fs-7">
+                                                    To </label>
+                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_ef" type="text" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center pb-1 mt-3">
+                            <button class="btn pressure-btn rounded-0 bg-secondary text-white copy">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
