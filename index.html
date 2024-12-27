@@ -164,11 +164,11 @@
 
         col.innerHTML = `
           <div class="card shadow h-100">
-            <div class="card-header text-center bg-secondary border-secondary">
+            <div class="card-header text-center bg-secondary border-secondary" onclick="window.location='config.html';" style="cursor:pointer">
               <label class="main-title fs-5 fw-bolder mb-0 text-white">Test-${i}</label>
             </div>
-            <div class="card-body m-auto" ondblclick="window.location='config.html';">
-                <div class="main-squre" onclick="openModal()">
+            <div class="card-body m-auto">
+                <div class="main-squre" onclick="openModal()" style="cursor:pointer">
                   <div class="d-flex">
                     <div class="square square-1"></div>
                     <div class="square square-2"></div>

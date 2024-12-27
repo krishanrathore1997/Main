@@ -1002,8 +1002,8 @@
                                       <div class="collapse" id="collapseExample">
                                         <div class="card card-body">
                                             <ol class="list-group list-group-numbered">
-                                                <li class="list-group-item bg-secondary fw text-white" data-bs-toggle="modal" data-bs-target="#singleMode" style="cursor: pointer;">Single Mode</li>
-                                                <li class="list-group-item bg-secondary fw text-white" data-bs-toggle="modal" data-bs-target="#multiMode" style="cursor: pointer;">Multi mode </li>
+                                                <li class="list-group-item bg-secondary fw text-white" data-bs-toggle="modal" data-bs-target="#singleMode" onclick="closeOffcanvas()" style="cursor: pointer;">Single Mode</li>
+                                                <li class="list-group-item bg-secondary fw text-white" data-bs-toggle="modal" data-bs-target="#multiMode" onclick="closeOffcanvas()" style="cursor: pointer;">Multi mode </li>
                                               </ol>
                                         </div>
                                       </div>
@@ -1032,37 +1032,29 @@
             </div>
         </div>
         <div class="modal fade" id="singleMode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-secondary text-center">
                         <label for="first" class="main-title fs-4 bold-label text-white m-0 text-center">Single Mode
-                            </label>
+                         </label>
                         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body bg-main">
-                        <div class="card bg-transparent">
-                            <div class="card-body">
+                    <div class="modal-body">
+                        <div class="card bg-transparent border-0">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="p-2 h-100">
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="fpn" class="width-per-30 fs-7 medium-label">From (Program No)
-                                                   </label>
-                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_t" type="text" id="weld_2_t">
-                                            </div>
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="tpn" class="width-per-30 medium-label fs-7">
-                                                    To (Program No)</label>
-                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_ef" type="text" >
-                                            </div>
-                                            <!-- <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="weld_2_l" id="weld_2_heat_label" class="width-per-30 medium-label fs-7">Force kgf:</label>
-                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_l" type="text" id="weld_2_l">
-                                            </div> -->
+                                            <div class="mb-3">
+                                                <label for="fpn" class="form-label">From (Program No)</label>
+                                                <input type="text" class="form-control" id="fpn" name="fpn">
+                                              </div>
+                                              <div class="mb-3">
+                                                <label for="tpn" class="form-label">To (Program No)</label>
+                                                <input type="text" class="form-control" id="tpn" name="tpn">
+                                              </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                         <div class="d-flex justify-content-center pb-1 mt-3">
                             <button class="btn pressure-btn rounded-0 bg-secondary text-white copy">
@@ -1074,39 +1066,34 @@
             </div>
           </div>
           <div class="modal fade" id="multiMode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-secondary text-center">
                         <label for="first" class="main-title fs-4 bold-label text-white m-0 text-center">Multi Mode
                             </label>
                         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body bg-main">
-                        <div class="card bg-transparent">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="p-2 h-100">
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="fpn" class="width-per-30 fs-7 medium-label">From (Program No)
-                                                   </label>
-                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_t" type="text" id="weld_2_t">
-                                            </div>
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="tpn" class="width-per-30 medium-label fs-7">
-                                                    To (Program No)</label>
-                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_ef" type="text" >
-                                            </div>
-                                            <div class="d-flex justify-content-end align-items-center mb-2">
-                                                <label for="to" class="width-per-30 medium-label fs-7">
-                                                    To </label>
-                                                <input class="ms-2 form-control width-per-90 weld2 medium-label" name="weld-2_ef" type="text" >
-                                            </div>
-                                        </div>
+                    <div class="modal-body">
+                        <div class="card bg-transparent border-0">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="p-2 h-100 row">
+                                        <div class="mb-3 col-12">
+                                            <label for="fpn" class="form-label">From (Program No)</label>
+                                            <input type="text" class="form-control" id="fpn" name="fpn">
+                                          </div>
+                                          <div class="mb-3 col-6">
+                                            <label for="tpn" class="form-label">To (Program No)</label>
+                                            <input type="text" class="form-control" id="tpn" name="tpn">
+                                          </div>
+                                          <div class="mb-3 col-6">
+                                            <label for="to" class="form-label">To</label>
+                                            <input type="text" class="form-control" id="to" name="to">
+                                          </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                    </div>  
                         <div class="d-flex justify-content-center pb-1 mt-3">
                             <button class="btn pressure-btn rounded-0 bg-secondary text-white copy">
                                 Copy
@@ -3341,7 +3328,12 @@ window.onload = function() {
     }
 
  
-
+    function closeOffcanvas() {
+  const offcanvas = document.querySelector('.offcanvas');
+  const backdrop = document.querySelector('.offcanvas-backdrop');
+  offcanvas.classList.remove('show');
+  backdrop.classList.remove('show');
+}
 
 
 </script>
